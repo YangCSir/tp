@@ -1,0 +1,99 @@
+{include file="common/header"}
+<div id="right_content">
+    <div class="top-info">
+        <i class="glyphicon glyphicon-home"></i>
+        资讯列表
+    </div>
+    
+    <!-- 菜单 -->
+    <ul class="clearfix menu">
+        <li><a href="#" class="this">数据列表</a></li>
+        <li>
+            <a 
+                href="{:url('add')}" target="frame_dispose" 
+                onclick="open_frame('添加', 100, 100, true);">
+                添加数据
+            </a>
+        </li>
+
+    </ul>
+
+    <div class="table-box">
+        <div class="table-header clearfix">
+            <div class="all-operation fl clearfix">
+                <button type="button" class="btn btn-danger btn-sm" 
+                onclick="all_operation('{:url('del')}','nid[]');">
+                    删除<i class="glyphicon glyphicon-trash ml5"></i>
+                </button>
+            </div>
+            <form action="" method="get" class="clearfix fr">
+                <div class="dateplugin fl" stype="selector">
+                    <input type="text" name="begin" class="form-control search-in date-input" placeholder="开始时间" value="{$begin}" >
+                </div>
+                <div class="dateplugin fl" stype="selector">
+                    <input type="text" name="end" class="form-control search-in date-input" placeholder="结束时间" value="{$end}" >
+                </div>
+
+                <input type="text" value="{$keywords}" name="keywords" class="form-control search-in" placeholder="标题/作者">
+                <button onclick="loding();" type="submit" class="btn btn-info btn-sm fl">
+                    <i class="glyphicon glyphicon-search"></i>
+                </button>
+            </form>
+        </div>
+
+        <table class="table">
+            <tr>
+                <th width="20">
+                    <div class="check_box">
+                        <span onclick="check_all('nid[]');"></span>
+                        <input type="checkbox" name="check_all" value="">
+                    </div>
+                </th>
+                <th>主键</th>
+                <th>标题</th>
+                <th>点赞次数</th>
+                <th>浏览次数</th>
+                <th>添加时间</th>
+                <th>作者</th>
+                <th>排序</th>
+
+                <th width="100">操作</th>
+            </tr>
+            {if (!empty($data))}
+            {foreach $data AS $v}
+                <tr>
+                    <td>
+                        <div class="check_box fl mr10">
+                            <span></span>
+                            <input type="checkbox" name="nid[]" value="{$v.nid}">
+                        </div>
+                    </td>
+                    <td>{$v.nid}</td>
+                    <td>{$v.title}</td>
+                    <td>{$v.praise}</td>
+                    <td>{$v.browse}</td>
+                    <td>{$v.add_time ? date('Y-m-d H:i:s', $v.add_time) : '----'}</td>
+                    <td>{$v.author}</td>
+                    <td>{$v.sort}</td>
+
+                    <td class="operation">
+                        <a href="{:url('edit',['nid'=>$v['nid']])}" target="frame_dispose" 
+                        onclick="open_frame('修改数据', 100, 100, true)" 
+                        class="glyphicon glyphicon-edit" title="编辑"></a>
+
+                        <a class="glyphicon glyphicon-trash"
+                        onclick="ajax_post('{:url('del')}',{'id':{$v['nid']}});" title="删除"></a>
+
+                    </td>
+                </tr>
+            {/foreach}
+            {/if}
+        </table>
+        <div>{$page}</div>
+    </div>
+</div>
+{include file="common/dateplugin"}
+<script type="text/javascript">
+
+</script>
+{include file="common/footer"}

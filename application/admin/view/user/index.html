@@ -1,0 +1,118 @@
+{include file="common/header"}
+<div id="right_content">
+    <div class="top-info">
+        <i class="glyphicon glyphicon-home"></i>
+        普通用户管理
+    </div>
+    
+    <!-- 菜单 -->
+    <ul class="clearfix menu">
+        <li><a href="#" class="this">数据列表</a></li>
+        <li>
+            <a 
+                href="{:url('add')}" target="frame_dispose" 
+                onclick="open_frame('添加', 100, 100, true);">
+                添加数据
+            </a>
+        </li>
+
+    </ul>
+
+    <div class="table-box">
+        <div class="table-header clearfix">
+            <div class="all-operation fl clearfix">
+                <button type="button" class="btn btn-danger btn-sm" 
+                onclick="all_operation('{:url('del')}','uid[]');">
+                    删除<i class="glyphicon glyphicon-trash ml5"></i>
+                </button>
+            </div>
+            <form action="" method="get" class="clearfix fr">
+                <input type="text" value="{$keywords}" name="keywords" class="form-control search-in" placeholder="主键/账号/昵称">
+                <button onclick="loding();" type="submit" class="btn btn-info btn-sm fl">
+                    <i class="glyphicon glyphicon-search"></i>
+                </button>
+            </form>
+        </div>
+
+        <table class="table">
+            <tr>
+                <th width="20">
+                    <div class="check_box">
+                        <span onclick="check_all('uid[]');"></span>
+                        <input type="checkbox" name="check_all" value="">
+                    </div>
+                </th>
+                <th>主键</th>
+                <th>头像</th>
+                <th>账号</th>
+                <th>昵称</th>
+                <th>注册时间</th>
+                <th>登录次数</th>
+                <th>最后登录时间</th>
+                <th>状态</th>
+
+                <th width="100">操作</th>
+            </tr>
+            {if (!empty($data))}
+            {foreach $data AS $v}
+                <tr>
+                    <td>
+                        <div class="check_box fl mr10">
+                            <span></span>
+                            <input type="checkbox" name="uid[]" value="{$v.uid}">
+                        </div>
+                    </td>
+                    <td>{$v.uid}</td>
+                    <td>
+                        {if empty($v.face)}
+                            <img src="/static/default.png" class="face img-circle" alt="">
+                        {else}
+                            <img src="{$v.face}" class="face img-circle" alt="">
+                        {/if}
+                    </td>
+                    <td>{$v.phone}</td>
+                    <td>{$v.niname}</td>
+                    <td>{$v.add_time ? date('Y-m-d H:i:s', $v.add_time) : '----'}</td>
+                    <td>{$v.login_num}</td>
+                    <td>{$v.login_time ? date('Y-m-d H:i:s', $v.login_time) : '----'}</td>
+                    <td>
+                        {if (!empty($checkVal['statusVal'][$v['status']]))}
+                            {if $v.status == 1}
+                                <span class="label label-success">{$checkVal['statusVal'][$v['status']]}</span>
+                            {else}
+                                <span class="label label-danger">{$checkVal['statusVal'][$v['status']]}</span>
+                            {/if}
+                        {/if}
+                    </td>
+
+                    <td class="operation">
+                        {if $v.status == 1}
+                        <a class="glyphicon glyphicon-remove cl-red"
+                           onclick="ajax_post('{:url('status')}',{'uid':{$v['uid']},'status':'0'});" title="禁用"></a>
+                        {else}
+                        <a class="glyphicon glyphicon-ok cl-gre"
+                           onclick="ajax_post('{:url('status')}',{'uid':{$v['uid']},'status':'1'});" title="启用"></a>
+                        {/if}
+                        <a href="{:url('edit',['uid'=>$v['uid']])}" target="frame_dispose" 
+                        onclick="open_frame('修改数据', 100, 100, true)" 
+                        class="glyphicon glyphicon-edit" title="编辑"></a>
+
+                        <a class="glyphicon glyphicon-trash"
+                        onclick="ajax_post('{:url('del')}',{'id':{$v['uid']}});" title="删除"></a>
+
+                        <a href="{:url('detail',['uid'=>$v['uid']])}" target="frame_dispose"
+                           onclick="open_frame('查看详情', 100, 100, true)"
+                           class="glyphicon glyphicon-folder-open" title="查看详情"></a>
+                    </td>
+                </tr>
+            {/foreach}
+            {/if}
+        </table>
+        <div>{$page}</div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+</script>
+{include file="common/footer"}

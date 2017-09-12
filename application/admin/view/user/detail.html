@@ -1,0 +1,75 @@
+{include file="common/header"}
+<style>
+    #right_content table tr td,#right_content table tr th{
+        border: solid #f1f1f1 1px;
+    }
+</style>
+<div id="right_content">
+    <form action="" class="verify-form rform">
+        <table class="table">
+            <input type="password" style="position:absolute; z-index: -1;">
+            <tr>
+                <th width="150" class="msg">账号</th>
+                <td><p class="lh35">{$data.phone}</p></td>
+            </tr>
+            <tr>
+                <th width="150" class="msg">昵称</th>
+                <td><p class="lh35">{$data.niname}</p></td>
+            </tr>
+            <tr>
+                <th width="150" class="msg">QQ号</th>
+                <td><p class="lh35">{$data.qq}</p></td>
+            </tr>
+            <tr>
+                <th width="150" class="msg">微信号</th>
+                <td><p class="lh35">{$data.wechat}</p></td>
+            </tr>
+            <tr>
+                <th width="150" class="msg">性别</th>
+                <td>
+                    <p class="lh35">
+                    {if $data.sex == 1}
+                        男
+                    {else}
+                        女
+                    {/if}
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <th width="150" class="msg">注册时间</th>
+                <td><p class="lh35">{:date('Y-m-d H:i:s', $data.add_time)}</p></td>
+            </tr>
+            <tr>
+                <th width="150" class="msg">最后登录时间</th>
+                <td><p class="lh35">{$data.login_time ? date('Y-m-d H:i:s', $data.login_time) : '----'}</p></td>
+            </tr>
+            <tr>
+                <th width="150" class="msg">登录次数</th>
+                <td><p class="lh35">{$data.login_num}</p></td>
+            </tr>
+            <tr>
+                <th width="150" class="msg">邮箱</th>
+                <td><p class="lh35">{$data.email}</p></td>
+            </tr>
+
+            <tr>
+                <th class="msg">状态</th>
+                <td>
+                    <p class="lh35">
+                    {if $data.status == 1}
+                    <span class="label label-success">{$checkVal['statusVal'][$data['status']]}</span>
+                    {else}
+                    <span class="label label-danger">{$checkVal['statusVal'][$data['status']]}</span>
+                    {/if}
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<script>
+
+</script>
+{include file="common/footer"}

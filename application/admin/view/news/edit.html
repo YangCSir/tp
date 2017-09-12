@@ -1,0 +1,51 @@
+{include file="common/header"}
+<div id="right_content">
+    <form action="" class="verify-form rform">
+        <table class="table">
+            <tr>
+                <td width="150"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th width="150" class="msg">标题</th>
+                <td><input name="title" value="{$data.title}" type="text" class="form-control w400" datatype="*"></td>
+            </tr>
+            <tr>
+                <th class="msg">简介</th>
+                <td><textarea name="intro" datatype="*">{$data.intro}</textarea></td>
+            </tr>
+            <tr>
+                <th class='msg'>详情</th>
+                <td>
+                    <textarea name="detail" style="width:600px;height:300px;" datatype="*" id="detailEditor">{$data.detail}</textarea>
+                </td>
+            </tr>
+            <tr>
+                <th width="150" class="msg">作者</th>
+                <td><input name="author" value="{$data.author}" type="text" class="form-control w400" datatype="*"></td>
+            </tr>
+            <tr>
+                <th width="150" class="msg">排序</th>
+                <td><input name="sort" value="{$data.sort}" type="text" class="form-control w400" datatype="n"></td>
+            </tr>
+  
+            <tr>
+                <td>
+                    <input name="nid" type="hidden" value="{$data.nid}">
+                </td>
+                <td><button type="submit" class="btn btn-success">Save Change</button></td>
+            </tr>
+        </table>        
+    </form>
+</div>
+{include file="common/ueditor"}
+   
+<script>
+setTimeout(function(){
+        UE.getEditor('detailEditor', {
+            autoHeight: false,
+        });
+    },500);
+          
+</script>
+{include file="common/footer"}

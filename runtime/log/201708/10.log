@@ -1,0 +1,1460 @@
+---------------------------------------------------------------
+[ 2017-08-10T10:41:36+08:00 ] ::1 ::1 GET /touzipingtai/code/php/tzpt/public/
+[ info ] localhost/touzipingtai/code/php/tzpt/public/ [运行时间：1.228613s][吞吐率：0.81req/s] [内存消耗：1,885.07kb] [文件加载：38]
+[ info ] [ LANG ] D:\www\touzipingtai\code\php\tzpt\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/touzipingtai/code/php/tzpt/',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8114503680; 9Lhb_2132_ulastactivity=6ef9Fun4%2FGSxTE5Ys0OkBcpSyVpjaAQuphd4JIu11PuoZYOiXVr5; OZ_1U_2119=vid=v8aa896266128b.0&ctime=1489972702&ltime=1488520476; Phpstorm-ff26543c=98c78e61-f066-493b-99a6-39905a27f7dc; jWM2jv_admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ log ] data为：
+---------------------------------------------------------------
+[ 2017-08-10T10:44:22+08:00 ] ::1 ::1 POST /touzipingtai/code/php/tzpt/public/
+[ info ] localhost/touzipingtai/code/php/tzpt/public/ [运行时间：1.222497s][吞吐率：0.82req/s] [内存消耗：3,033.21kb] [文件加载：50]
+[ info ] [ LANG ] D:\www\touzipingtai\code\php\tzpt\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '251',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://localhost',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryduNt1eMUF40igNXH',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/touzipingtai/code/php/tzpt/api_test.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8114503680; 9Lhb_2132_ulastactivity=6ef9Fun4%2FGSxTE5Ys0OkBcpSyVpjaAQuphd4JIu11PuoZYOiXVr5; OZ_1U_2119=vid=v8aa896266128b.0&ctime=1489972702&ltime=1488520476; Phpstorm-ff26543c=98c78e61-f066-493b-99a6-39905a27f7dc; jWM2jv_admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+  'data' => 'YXBpaWQ9V0pKTWVhQlgmYXBpa2V5PVpJS1hleEdmVkZhTkZSeTMmYXBpdHlwZT1sb2dpbiZwaG9uZT0xNzgyODExMDQ1NSZwYXNzd29yZD0xMjM0NTY=',
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\www\touzipingtai\code\php\tzpt\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ log ] data为：YXBpaWQ9V0pKTWVhQlgmYXBpa2V5PVpJS1hleEdmVkZhTkZSeTMmYXBpdHlwZT1sb2dpbiZwaG9uZT0xNzgyODExMDQ1NSZwYXNzd29yZD0xMjM0NTY=
+[ sql ] [ DB ] CONNECT:[ UseTime:0.234604s ] mysql:dbname=invest;host=139.196.255.96;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpn_user` [ RunTime:0.104371s ]
+[ sql ] [ SQL ] SELECT `uid` FROM `tpn_user` WHERE  `phone` = '17828110455' LIMIT 1 [ RunTime:0.082038s ]
+[ sql ] [ SQL ] SELECT * FROM `tpn_user` WHERE  `phone` = '17828110455'  AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1 [ RunTime:0.082788s ]
+[ sql ] [ SQL ] SELECT * FROM `tpn_user` WHERE  `uid` = 13 LIMIT 1 [ RunTime:0.084920s ]
+[ sql ] [ SQL ] UPDATE `tpn_user`  SET `logintoken`='76ed2e20dc92fb4d10a950aba3ac55f3'  WHERE  `uid` = 13 [ RunTime:0.082117s ]
+---------------------------------------------------------------
+[ 2017-08-10T14:52:23+08:00 ] ::1 ::1 POST /touzipingtai/code/php/tzpt/public/
+[ info ] localhost/touzipingtai/code/php/tzpt/public/ [运行时间：1.814895s][吞吐率：0.55req/s] [内存消耗：3,047.79kb] [文件加载：50]
+[ info ] [ LANG ] D:\www\touzipingtai\code\php\tzpt\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '291',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://localhost',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryOvARnd3x7Ec8cVaT',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/touzipingtai/code/php/tzpt/api_test.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8114503680; 9Lhb_2132_ulastactivity=6ef9Fun4%2FGSxTE5Ys0OkBcpSyVpjaAQuphd4JIu11PuoZYOiXVr5; OZ_1U_2119=vid=v8aa896266128b.0&ctime=1489972702&ltime=1488520476; Phpstorm-ff26543c=98c78e61-f066-493b-99a6-39905a27f7dc; jWM2jv_admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+  'data' => 'YXBpaWQ9V0pKTWVhQlgmYXBpa2V5PVpJS1hleEdmVkZhTkZSeTMmYXBpdHlwZT1hc2tQcm9qZWN0JnByb2plY3RfaWQ9NDMmdHlwZT0xJnRva2VuPTRmM2YzYTY3OTc4NTlmZjJiNDQ2OTRhNjc0N2M2ZjZk',
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\www\touzipingtai\code\php\tzpt\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ log ] data为：YXBpaWQ9V0pKTWVhQlgmYXBpa2V5PVpJS1hleEdmVkZhTkZSeTMmYXBpdHlwZT1hc2tQcm9qZWN0JnByb2plY3RfaWQ9NDMmdHlwZT0xJnRva2VuPTRmM2YzYTY3OTc4NTlmZjJiNDQ2OTRhNjc0N2M2ZjZk
+[ sql ] [ DB ] CONNECT:[ UseTime:0.151062s ] mysql:dbname=invest;host=139.196.255.96;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpn_user` [ RunTime:0.093131s ]
+[ sql ] [ SQL ] SELECT * FROM `tpn_user` WHERE  `logintoken` = '4f3f3a6797859ff2b44694a6747c6f6d' LIMIT 1 [ RunTime:0.093926s ]
+[ sql ] [ SQL ] SELECT * FROM `tpn_user` WHERE  `uid` = 13 LIMIT 1 [ RunTime:0.090639s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpn_project_ask` [ RunTime:0.089875s ]
+[ sql ] [ SQL ] SELECT `paid` FROM `tpn_project_ask` WHERE  `pid` IS NULL  AND `uid` = 13  AND `type` = 1 LIMIT 1 [ RunTime:0.080880s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpn_project` [ RunTime:0.081859s ]
+[ sql ] [ SQL ] SELECT `uid` FROM `tpn_project` WHERE  `pid` = 43 LIMIT 1 [ RunTime:0.080459s ]
+[ sql ] [ SQL ] INSERT INTO `tpn_project_ask` (`pid` , `uid` , `type` , `add_time` , `user_id`) VALUES (43 , 13 , 1 , 1502347943 , 20) [ RunTime:0.083316s ]
+[ error ] [8]未定义数组索引: pid[D:\www\touzipingtai\code\php\tzpt\application\index\controller\Index.php:854]
+---------------------------------------------------------------
+[ 2017-08-10T14:53:16+08:00 ] ::1 ::1 POST /touzipingtai/code/php/tzpt/public/
+[ info ] localhost/touzipingtai/code/php/tzpt/public/ [运行时间：0.788288s][吞吐率：1.27req/s] [内存消耗：3,040.16kb] [文件加载：50]
+[ info ] [ LANG ] D:\www\touzipingtai\code\php\tzpt\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '291',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://localhost',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundary1Rb70QW4USTBpruZ',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/touzipingtai/code/php/tzpt/api_test.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8114503680; 9Lhb_2132_ulastactivity=6ef9Fun4%2FGSxTE5Ys0OkBcpSyVpjaAQuphd4JIu11PuoZYOiXVr5; OZ_1U_2119=vid=v8aa896266128b.0&ctime=1489972702&ltime=1488520476; Phpstorm-ff26543c=98c78e61-f066-493b-99a6-39905a27f7dc; jWM2jv_admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+  'data' => 'YXBpaWQ9V0pKTWVhQlgmYXBpa2V5PVpJS1hleEdmVkZhTkZSeTMmYXBpdHlwZT1hc2tQcm9qZWN0JnByb2plY3RfaWQ9NDMmdHlwZT0xJnRva2VuPTRmM2YzYTY3OTc4NTlmZjJiNDQ2OTRhNjc0N2M2ZjZk',
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\www\touzipingtai\code\php\tzpt\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ log ] data为：YXBpaWQ9V0pKTWVhQlgmYXBpa2V5PVpJS1hleEdmVkZhTkZSeTMmYXBpdHlwZT1hc2tQcm9qZWN0JnByb2plY3RfaWQ9NDMmdHlwZT0xJnRva2VuPTRmM2YzYTY3OTc4NTlmZjJiNDQ2OTRhNjc0N2M2ZjZk
+[ sql ] [ DB ] CONNECT:[ UseTime:0.157136s ] mysql:dbname=invest;host=139.196.255.96;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpn_user` [ RunTime:0.083215s ]
+[ sql ] [ SQL ] SELECT * FROM `tpn_user` WHERE  `logintoken` = '4f3f3a6797859ff2b44694a6747c6f6d' LIMIT 1 [ RunTime:0.079053s ]
+[ sql ] [ SQL ] SELECT * FROM `tpn_user` WHERE  `uid` = 13 LIMIT 1 [ RunTime:0.076691s ]
+[ error ] [8]未定义数组索引: pid[D:\www\touzipingtai\code\php\tzpt\application\index\controller\Index.php:854]
+---------------------------------------------------------------
+[ 2017-08-10T14:53:33+08:00 ] ::1 ::1 POST /touzipingtai/code/php/tzpt/public/
+[ info ] localhost/touzipingtai/code/php/tzpt/public/ [运行时间：0.678283s][吞吐率：1.47req/s] [内存消耗：3,032.29kb] [文件加载：50]
+[ info ] [ LANG ] D:\www\touzipingtai\code\php\tzpt\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '291',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://localhost',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryroqsuj5REfhhL3sD',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/touzipingtai/code/php/tzpt/api_test.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8114503680; 9Lhb_2132_ulastactivity=6ef9Fun4%2FGSxTE5Ys0OkBcpSyVpjaAQuphd4JIu11PuoZYOiXVr5; OZ_1U_2119=vid=v8aa896266128b.0&ctime=1489972702&ltime=1488520476; Phpstorm-ff26543c=98c78e61-f066-493b-99a6-39905a27f7dc; jWM2jv_admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+  'data' => 'YXBpaWQ9V0pKTWVhQlgmYXBpa2V5PVpJS1hleEdmVkZhTkZSeTMmYXBpdHlwZT1hc2tQcm9qZWN0JnByb2plY3RfaWQ9NDMmdHlwZT0xJnRva2VuPTRmM2YzYTY3OTc4NTlmZjJiNDQ2OTRhNjc0N2M2ZjZk',
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\www\touzipingtai\code\php\tzpt\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ log ] data为：YXBpaWQ9V0pKTWVhQlgmYXBpa2V5PVpJS1hleEdmVkZhTkZSeTMmYXBpdHlwZT1hc2tQcm9qZWN0JnByb2plY3RfaWQ9NDMmdHlwZT0xJnRva2VuPTRmM2YzYTY3OTc4NTlmZjJiNDQ2OTRhNjc0N2M2ZjZk
+[ sql ] [ DB ] CONNECT:[ UseTime:0.128375s ] mysql:dbname=invest;host=139.196.255.96;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpn_user` [ RunTime:0.083997s ]
+[ sql ] [ SQL ] SELECT * FROM `tpn_user` WHERE  `logintoken` = '4f3f3a6797859ff2b44694a6747c6f6d' LIMIT 1 [ RunTime:0.083526s ]
+[ sql ] [ SQL ] SELECT * FROM `tpn_user` WHERE  `uid` = 13 LIMIT 1 [ RunTime:0.080400s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpn_project_ask` [ RunTime:0.082974s ]
+[ sql ] [ SQL ] SELECT `paid` FROM `tpn_project_ask` WHERE  `pid` IS NULL  AND `uid` = 13  AND `type` = 1 LIMIT 1 [ RunTime:0.080721s ]
+[ error ] [8]未定义数组索引: pid[D:\www\touzipingtai\code\php\tzpt\application\index\controller\Index.php:854]
+---------------------------------------------------------------
+[ 2017-08-10T14:53:43+08:00 ] ::1 ::1 POST /touzipingtai/code/php/tzpt/public/
+[ info ] localhost/touzipingtai/code/php/tzpt/public/ [运行时间：0.473105s][吞吐率：2.11req/s] [内存消耗：2,973.77kb] [文件加载：47]
+[ info ] [ LANG ] D:\www\touzipingtai\code\php\tzpt\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '291',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://localhost',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryzuDh5mBQEaySAoOp',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/touzipingtai/code/php/tzpt/api_test.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8114503680; 9Lhb_2132_ulastactivity=6ef9Fun4%2FGSxTE5Ys0OkBcpSyVpjaAQuphd4JIu11PuoZYOiXVr5; OZ_1U_2119=vid=v8aa896266128b.0&ctime=1489972702&ltime=1488520476; Phpstorm-ff26543c=98c78e61-f066-493b-99a6-39905a27f7dc; jWM2jv_admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+  'data' => 'YXBpaWQ9V0pKTWVhQlgmYXBpa2V5PVpJS1hleEdmVkZhTkZSeTMmYXBpdHlwZT1hc2tQcm9qZWN0JnByb2plY3RfaWQ9NDMmdHlwZT0xJnRva2VuPTRmM2YzYTY3OTc4NTlmZjJiNDQ2OTRhNjc0N2M2ZjZk',
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\www\touzipingtai\code\php\tzpt\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ log ] data为：YXBpaWQ9V0pKTWVhQlgmYXBpa2V5PVpJS1hleEdmVkZhTkZSeTMmYXBpdHlwZT1hc2tQcm9qZWN0JnByb2plY3RfaWQ9NDMmdHlwZT0xJnRva2VuPTRmM2YzYTY3OTc4NTlmZjJiNDQ2OTRhNjc0N2M2ZjZk
+[ sql ] [ DB ] CONNECT:[ UseTime:0.120901s ] mysql:dbname=invest;host=139.196.255.96;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpn_user` [ RunTime:0.083445s ]
+[ sql ] [ SQL ] SELECT * FROM `tpn_user` WHERE  `logintoken` = '4f3f3a6797859ff2b44694a6747c6f6d' LIMIT 1 [ RunTime:0.080664s ]
+[ sql ] [ SQL ] SELECT * FROM `tpn_user` WHERE  `uid` = 13 LIMIT 1 [ RunTime:0.117346s ]
+---------------------------------------------------------------
+[ 2017-08-10T14:57:55+08:00 ] ::1 ::1 POST /touzipingtai/code/php/tzpt/public/
+[ info ] localhost/touzipingtai/code/php/tzpt/public/ [运行时间：0.683979s][吞吐率：1.46req/s] [内存消耗：3,033.42kb] [文件加载：50]
+[ info ] [ LANG ] D:\www\touzipingtai\code\php\tzpt\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '291',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://localhost',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryZ2qlKONtjdk4CddF',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/touzipingtai/code/php/tzpt/api_test.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8114503680; 9Lhb_2132_ulastactivity=6ef9Fun4%2FGSxTE5Ys0OkBcpSyVpjaAQuphd4JIu11PuoZYOiXVr5; OZ_1U_2119=vid=v8aa896266128b.0&ctime=1489972702&ltime=1488520476; Phpstorm-ff26543c=98c78e61-f066-493b-99a6-39905a27f7dc; jWM2jv_admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+  'data' => 'YXBpaWQ9V0pKTWVhQlgmYXBpa2V5PVpJS1hleEdmVkZhTkZSeTMmYXBpdHlwZT1hc2tQcm9qZWN0JnByb2plY3RfaWQ9NDMmdHlwZT0xJnRva2VuPTRmM2YzYTY3OTc4NTlmZjJiNDQ2OTRhNjc0N2M2ZjZk',
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\www\touzipingtai\code\php\tzpt\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ log ] data为：YXBpaWQ9V0pKTWVhQlgmYXBpa2V5PVpJS1hleEdmVkZhTkZSeTMmYXBpdHlwZT1hc2tQcm9qZWN0JnByb2plY3RfaWQ9NDMmdHlwZT0xJnRva2VuPTRmM2YzYTY3OTc4NTlmZjJiNDQ2OTRhNjc0N2M2ZjZk
+[ sql ] [ DB ] CONNECT:[ UseTime:0.138443s ] mysql:dbname=invest;host=139.196.255.96;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpn_user` [ RunTime:0.096462s ]
+[ sql ] [ SQL ] SELECT * FROM `tpn_user` WHERE  `logintoken` = '4f3f3a6797859ff2b44694a6747c6f6d' LIMIT 1 [ RunTime:0.092215s ]
+[ sql ] [ SQL ] SELECT * FROM `tpn_user` WHERE  `uid` = 13 LIMIT 1 [ RunTime:0.095041s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpn_project_ask` [ RunTime:0.082091s ]
+[ sql ] [ SQL ] SELECT `paid` FROM `tpn_project_ask` WHERE  `pid` = 0  AND `uid` = 13  AND `type` = 1 LIMIT 1 [ RunTime:0.095010s ]
+[ error ] [8]未定义数组索引: pid[D:\www\touzipingtai\code\php\tzpt\application\index\controller\Index.php:854]
+---------------------------------------------------------------
+[ 2017-08-10T14:59:08+08:00 ] ::1 ::1 POST /touzipingtai/code/php/tzpt/public/
+[ info ] localhost/touzipingtai/code/php/tzpt/public/ [运行时间：0.721302s][吞吐率：1.39req/s] [内存消耗：3,035.73kb] [文件加载：50]
+[ info ] [ LANG ] D:\www\touzipingtai\code\php\tzpt\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '291',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://localhost',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundary2oFCy1VZBBSa1qEf',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/touzipingtai/code/php/tzpt/api_test.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8114503680; 9Lhb_2132_ulastactivity=6ef9Fun4%2FGSxTE5Ys0OkBcpSyVpjaAQuphd4JIu11PuoZYOiXVr5; OZ_1U_2119=vid=v8aa896266128b.0&ctime=1489972702&ltime=1488520476; Phpstorm-ff26543c=98c78e61-f066-493b-99a6-39905a27f7dc; jWM2jv_admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+  'data' => 'YXBpaWQ9V0pKTWVhQlgmYXBpa2V5PVpJS1hleEdmVkZhTkZSeTMmYXBpdHlwZT1hc2tQcm9qZWN0JnByb2plY3RfaWQ9NDMmdHlwZT0xJnRva2VuPTRmM2YzYTY3OTc4NTlmZjJiNDQ2OTRhNjc0N2M2ZjZk',
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\www\touzipingtai\code\php\tzpt\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ log ] data为：YXBpaWQ9V0pKTWVhQlgmYXBpa2V5PVpJS1hleEdmVkZhTkZSeTMmYXBpdHlwZT1hc2tQcm9qZWN0JnByb2plY3RfaWQ9NDMmdHlwZT0xJnRva2VuPTRmM2YzYTY3OTc4NTlmZjJiNDQ2OTRhNjc0N2M2ZjZk
+[ sql ] [ DB ] CONNECT:[ UseTime:0.127901s ] mysql:dbname=invest;host=139.196.255.96;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpn_user` [ RunTime:0.097517s ]
+[ sql ] [ SQL ] SELECT * FROM `tpn_user` WHERE  `logintoken` = '4f3f3a6797859ff2b44694a6747c6f6d' LIMIT 1 [ RunTime:0.084473s ]
+[ sql ] [ SQL ] SELECT * FROM `tpn_user` WHERE  `uid` = 13 LIMIT 1 [ RunTime:0.082465s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpn_project_ask` [ RunTime:0.137507s ]
+[ sql ] [ SQL ] SELECT `paid` FROM `tpn_project_ask` WHERE  `pid` IS NULL  AND `uid` = 13  AND `type` = 1 LIMIT 1 [ RunTime:0.112130s ]
+[ error ] [8]未定义数组索引: pid[D:\www\touzipingtai\code\php\tzpt\application\index\controller\Index.php:854]
+---------------------------------------------------------------
+[ 2017-08-10T14:59:35+08:00 ] ::1 ::1 POST /touzipingtai/code/php/tzpt/public/
+[ info ] localhost/touzipingtai/code/php/tzpt/public/ [运行时间：0.786676s][吞吐率：1.27req/s] [内存消耗：2,971.27kb] [文件加载：47]
+[ info ] [ LANG ] D:\www\touzipingtai\code\php\tzpt\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '291',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://localhost',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundary7U6tYbHQJ93ZOsAy',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/touzipingtai/code/php/tzpt/api_test.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8114503680; 9Lhb_2132_ulastactivity=6ef9Fun4%2FGSxTE5Ys0OkBcpSyVpjaAQuphd4JIu11PuoZYOiXVr5; OZ_1U_2119=vid=v8aa896266128b.0&ctime=1489972702&ltime=1488520476; Phpstorm-ff26543c=98c78e61-f066-493b-99a6-39905a27f7dc; jWM2jv_admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+  'data' => 'YXBpaWQ9V0pKTWVhQlgmYXBpa2V5PVpJS1hleEdmVkZhTkZSeTMmYXBpdHlwZT1hc2tQcm9qZWN0JnByb2plY3RfaWQ9NDMmdHlwZT0xJnRva2VuPTRmM2YzYTY3OTc4NTlmZjJiNDQ2OTRhNjc0N2M2ZjZk',
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\www\touzipingtai\code\php\tzpt\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ log ] data为：YXBpaWQ9V0pKTWVhQlgmYXBpa2V5PVpJS1hleEdmVkZhTkZSeTMmYXBpdHlwZT1hc2tQcm9qZWN0JnByb2plY3RfaWQ9NDMmdHlwZT0xJnRva2VuPTRmM2YzYTY3OTc4NTlmZjJiNDQ2OTRhNjc0N2M2ZjZk
+[ sql ] [ DB ] CONNECT:[ UseTime:0.203958s ] mysql:dbname=invest;host=139.196.255.96;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpn_user` [ RunTime:0.148346s ]
+[ sql ] [ SQL ] SELECT * FROM `tpn_user` WHERE  `logintoken` = '4f3f3a6797859ff2b44694a6747c6f6d' LIMIT 1 [ RunTime:0.105607s ]
+[ sql ] [ SQL ] SELECT * FROM `tpn_user` WHERE  `uid` = 13 LIMIT 1 [ RunTime:0.085934s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpn_project_ask` [ RunTime:0.080393s ]
+[ sql ] [ SQL ] SELECT `paid` FROM `tpn_project_ask` WHERE  `pid` = 43  AND `uid` = 13  AND `type` = 1 LIMIT 1 [ RunTime:0.086508s ]
+---------------------------------------------------------------
+[ 2017-08-10T15:14:50+08:00 ] ::1 ::1 GET /touzipingtai/code/php/tzpt/public/news/6
+[ info ] localhost/touzipingtai/code/php/tzpt/public/news/6 [运行时间：1.805124s][吞吐率：0.55req/s] [内存消耗：2,861.27kb] [文件加载：53]
+[ info ] [ LANG ] D:\www\touzipingtai\code\php\tzpt\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => NULL,
+    1 => 'Posts',
+    2 => 'news',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8114503680; 9Lhb_2132_ulastactivity=6ef9Fun4%2FGSxTE5Ys0OkBcpSyVpjaAQuphd4JIu11PuoZYOiXVr5; OZ_1U_2119=vid=v8aa896266128b.0&ctime=1489972702&ltime=1488520476; Phpstorm-ff26543c=98c78e61-f066-493b-99a6-39905a27f7dc; jWM2jv_admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+  'id' => '6',
+)
+[ info ] [ RUN ] app\index\controller\Posts->news[ D:\www\touzipingtai\code\php\tzpt\application\index\controller\Posts.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ VIEW ] D:\www\touzipingtai\code\php\tzpt\public/../application/index\view\posts\news.html [ array (
+  0 => 'data',
+  1 => 'recommend',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.462415s ] mysql:dbname=invest;host=139.196.255.96;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpn_news` [ RunTime:0.255445s ]
+[ sql ] [ SQL ] SELECT * FROM `tpn_news` WHERE  `nid` = 6 LIMIT 1 [ RunTime:0.177406s ]
+[ sql ] [ SQL ] UPDATE `tpn_news`  SET `browse`=browse+1  WHERE  `nid` = 6 [ RunTime:0.241474s ]
+[ sql ] [ SQL ] select nid,title from tpn_news where nid !=6 order by rand() limit 3 [ RunTime:0.260499s ]
+---------------------------------------------------------------
+[ 2017-08-10T15:16:31+08:00 ] ::1 ::1 GET /touzipingtai/code/php/tzpt/public/news/6
+[ info ] localhost/touzipingtai/code/php/tzpt/public/news/6 [运行时间：0.633849s][吞吐率：1.58req/s] [内存消耗：2,861.47kb] [文件加载：53]
+[ info ] [ LANG ] D:\www\touzipingtai\code\php\tzpt\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => NULL,
+    1 => 'Posts',
+    2 => 'news',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8114503680; 9Lhb_2132_ulastactivity=6ef9Fun4%2FGSxTE5Ys0OkBcpSyVpjaAQuphd4JIu11PuoZYOiXVr5; OZ_1U_2119=vid=v8aa896266128b.0&ctime=1489972702&ltime=1488520476; Phpstorm-ff26543c=98c78e61-f066-493b-99a6-39905a27f7dc; jWM2jv_admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+  'id' => '6',
+)
+[ info ] [ RUN ] app\index\controller\Posts->news[ D:\www\touzipingtai\code\php\tzpt\application\index\controller\Posts.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ VIEW ] D:\www\touzipingtai\code\php\tzpt\public/../application/index\view\posts\news.html [ array (
+  0 => 'data',
+  1 => 'recommend',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.132362s ] mysql:dbname=invest;host=139.196.255.96;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpn_news` [ RunTime:0.087464s ]
+[ sql ] [ SQL ] SELECT * FROM `tpn_news` WHERE  `nid` = 6 LIMIT 1 [ RunTime:0.082346s ]
+[ sql ] [ SQL ] UPDATE `tpn_news`  SET `browse`=browse+1  WHERE  `nid` = 6 [ RunTime:0.078468s ]
+[ sql ] [ SQL ] select nid,title from tpn_news where nid !=6 order by rand() limit 3 [ RunTime:0.081779s ]
+---------------------------------------------------------------
+[ 2017-08-10T15:20:20+08:00 ] ::1 ::1 GET /touzipingtai/code/php/tzpt/public/news/6
+[ info ] localhost/touzipingtai/code/php/tzpt/public/news/6 [运行时间：0.524285s][吞吐率：1.91req/s] [内存消耗：2,861.41kb] [文件加载：53]
+[ info ] [ LANG ] D:\www\touzipingtai\code\php\tzpt\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => NULL,
+    1 => 'Posts',
+    2 => 'news',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8114503680; 9Lhb_2132_ulastactivity=6ef9Fun4%2FGSxTE5Ys0OkBcpSyVpjaAQuphd4JIu11PuoZYOiXVr5; OZ_1U_2119=vid=v8aa896266128b.0&ctime=1489972702&ltime=1488520476; Phpstorm-ff26543c=98c78e61-f066-493b-99a6-39905a27f7dc; jWM2jv_admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+  'id' => '6',
+)
+[ info ] [ RUN ] app\index\controller\Posts->news[ D:\www\touzipingtai\code\php\tzpt\application\index\controller\Posts.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ VIEW ] D:\www\touzipingtai\code\php\tzpt\public/../application/index\view\posts\news.html [ array (
+  0 => 'data',
+  1 => 'recommend',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.120870s ] mysql:dbname=invest;host=139.196.255.96;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpn_news` [ RunTime:0.079462s ]
+[ sql ] [ SQL ] SELECT * FROM `tpn_news` WHERE  `nid` = 6 LIMIT 1 [ RunTime:0.083843s ]
+[ sql ] [ SQL ] UPDATE `tpn_news`  SET `browse`=browse+1  WHERE  `nid` = 6 [ RunTime:0.077009s ]
+[ sql ] [ SQL ] select nid,title from tpn_news where nid !=6 order by rand() limit 3 [ RunTime:0.078543s ]
+---------------------------------------------------------------
+[ 2017-08-10T15:20:58+08:00 ] ::1 ::1 GET /touzipingtai/code/php/tzpt/public/news/6
+[ info ] localhost/touzipingtai/code/php/tzpt/public/news/6 [运行时间：0.539528s][吞吐率：1.85req/s] [内存消耗：2,719.18kb] [文件加载：51]
+[ info ] [ LANG ] D:\www\touzipingtai\code\php\tzpt\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => NULL,
+    1 => 'Posts',
+    2 => 'news',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8114503680; 9Lhb_2132_ulastactivity=6ef9Fun4%2FGSxTE5Ys0OkBcpSyVpjaAQuphd4JIu11PuoZYOiXVr5; OZ_1U_2119=vid=v8aa896266128b.0&ctime=1489972702&ltime=1488520476; Phpstorm-ff26543c=98c78e61-f066-493b-99a6-39905a27f7dc; jWM2jv_admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+  'id' => '6',
+)
+[ info ] [ RUN ] app\index\controller\Posts->news[ D:\www\touzipingtai\code\php\tzpt\application\index\controller\Posts.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ VIEW ] D:\www\touzipingtai\code\php\tzpt\public/../application/index\view\posts\news.html [ array (
+  0 => 'data',
+  1 => 'recommend',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.126414s ] mysql:dbname=invest;host=139.196.255.96;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpn_news` [ RunTime:0.087961s ]
+[ sql ] [ SQL ] SELECT * FROM `tpn_news` WHERE  `nid` = 6 LIMIT 1 [ RunTime:0.086147s ]
+[ sql ] [ SQL ] UPDATE `tpn_news`  SET `browse`=browse+1  WHERE  `nid` = 6 [ RunTime:0.080287s ]
+[ sql ] [ SQL ] select nid,title from tpn_news where nid !=6 order by rand() limit 3 [ RunTime:0.086588s ]
+---------------------------------------------------------------
+[ 2017-08-10T15:21:04+08:00 ] ::1 ::1 GET /touzipingtai/code/php/tzpt/public/news/6
+[ info ] localhost/touzipingtai/code/php/tzpt/public/news/6 [运行时间：0.532110s][吞吐率：1.88req/s] [内存消耗：2,719.18kb] [文件加载：51]
+[ info ] [ LANG ] D:\www\touzipingtai\code\php\tzpt\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => NULL,
+    1 => 'Posts',
+    2 => 'news',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8114503680; 9Lhb_2132_ulastactivity=6ef9Fun4%2FGSxTE5Ys0OkBcpSyVpjaAQuphd4JIu11PuoZYOiXVr5; OZ_1U_2119=vid=v8aa896266128b.0&ctime=1489972702&ltime=1488520476; Phpstorm-ff26543c=98c78e61-f066-493b-99a6-39905a27f7dc; jWM2jv_admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+  'id' => '6',
+)
+[ info ] [ RUN ] app\index\controller\Posts->news[ D:\www\touzipingtai\code\php\tzpt\application\index\controller\Posts.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ VIEW ] D:\www\touzipingtai\code\php\tzpt\public/../application/index\view\posts\news.html [ array (
+  0 => 'data',
+  1 => 'recommend',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.127105s ] mysql:dbname=invest;host=139.196.255.96;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpn_news` [ RunTime:0.083513s ]
+[ sql ] [ SQL ] SELECT * FROM `tpn_news` WHERE  `nid` = 6 LIMIT 1 [ RunTime:0.082027s ]
+[ sql ] [ SQL ] UPDATE `tpn_news`  SET `browse`=browse+1  WHERE  `nid` = 6 [ RunTime:0.080210s ]
+[ sql ] [ SQL ] select nid,title from tpn_news where nid !=6 order by rand() limit 3 [ RunTime:0.080058s ]
+---------------------------------------------------------------
+[ 2017-08-10T15:21:17+08:00 ] ::1 ::1 GET /touzipingtai/code/php/tzpt/public/news/6
+[ info ] localhost/touzipingtai/code/php/tzpt/public/news/6 [运行时间：0.544927s][吞吐率：1.84req/s] [内存消耗：2,719.18kb] [文件加载：51]
+[ info ] [ LANG ] D:\www\touzipingtai\code\php\tzpt\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => NULL,
+    1 => 'Posts',
+    2 => 'news',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8114503680; 9Lhb_2132_ulastactivity=6ef9Fun4%2FGSxTE5Ys0OkBcpSyVpjaAQuphd4JIu11PuoZYOiXVr5; OZ_1U_2119=vid=v8aa896266128b.0&ctime=1489972702&ltime=1488520476; Phpstorm-ff26543c=98c78e61-f066-493b-99a6-39905a27f7dc; jWM2jv_admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+  'id' => '6',
+)
+[ info ] [ RUN ] app\index\controller\Posts->news[ D:\www\touzipingtai\code\php\tzpt\application\index\controller\Posts.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ VIEW ] D:\www\touzipingtai\code\php\tzpt\public/../application/index\view\posts\news.html [ array (
+  0 => 'data',
+  1 => 'recommend',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.125472s ] mysql:dbname=invest;host=139.196.255.96;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpn_news` [ RunTime:0.087004s ]
+[ sql ] [ SQL ] SELECT * FROM `tpn_news` WHERE  `nid` = 6 LIMIT 1 [ RunTime:0.086049s ]
+[ sql ] [ SQL ] UPDATE `tpn_news`  SET `browse`=browse+1  WHERE  `nid` = 6 [ RunTime:0.079604s ]
+[ sql ] [ SQL ] select nid,title from tpn_news where nid !=6 order by rand() limit 3 [ RunTime:0.084628s ]
+---------------------------------------------------------------
+[ 2017-08-10T15:21:20+08:00 ] ::1 ::1 GET /touzipingtai/code/php/tzpt/public/news/6
+[ info ] localhost/touzipingtai/code/php/tzpt/public/news/6 [运行时间：0.554913s][吞吐率：1.80req/s] [内存消耗：2,719.35kb] [文件加载：51]
+[ info ] [ LANG ] D:\www\touzipingtai\code\php\tzpt\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => NULL,
+    1 => 'Posts',
+    2 => 'news',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8114503680; 9Lhb_2132_ulastactivity=6ef9Fun4%2FGSxTE5Ys0OkBcpSyVpjaAQuphd4JIu11PuoZYOiXVr5; OZ_1U_2119=vid=v8aa896266128b.0&ctime=1489972702&ltime=1488520476; Phpstorm-ff26543c=98c78e61-f066-493b-99a6-39905a27f7dc; jWM2jv_admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+  'id' => '6',
+)
+[ info ] [ RUN ] app\index\controller\Posts->news[ D:\www\touzipingtai\code\php\tzpt\application\index\controller\Posts.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ VIEW ] D:\www\touzipingtai\code\php\tzpt\public/../application/index\view\posts\news.html [ array (
+  0 => 'data',
+  1 => 'recommend',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.136439s ] mysql:dbname=invest;host=139.196.255.96;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpn_news` [ RunTime:0.090598s ]
+[ sql ] [ SQL ] SELECT * FROM `tpn_news` WHERE  `nid` = 6 LIMIT 1 [ RunTime:0.087756s ]
+[ sql ] [ SQL ] UPDATE `tpn_news`  SET `browse`=browse+1  WHERE  `nid` = 6 [ RunTime:0.083901s ]
+[ sql ] [ SQL ] select nid,title from tpn_news where nid !=6 order by rand() limit 3 [ RunTime:0.086173s ]
+---------------------------------------------------------------
+[ 2017-08-10T15:21:34+08:00 ] ::1 ::1 GET /touzipingtai/code/php/tzpt/public/news/6
+[ info ] localhost/touzipingtai/code/php/tzpt/public/news/6 [运行时间：0.544149s][吞吐率：1.84req/s] [内存消耗：2,719.18kb] [文件加载：51]
+[ info ] [ LANG ] D:\www\touzipingtai\code\php\tzpt\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => NULL,
+    1 => 'Posts',
+    2 => 'news',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8114503680; 9Lhb_2132_ulastactivity=6ef9Fun4%2FGSxTE5Ys0OkBcpSyVpjaAQuphd4JIu11PuoZYOiXVr5; OZ_1U_2119=vid=v8aa896266128b.0&ctime=1489972702&ltime=1488520476; Phpstorm-ff26543c=98c78e61-f066-493b-99a6-39905a27f7dc; jWM2jv_admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+  'id' => '6',
+)
+[ info ] [ RUN ] app\index\controller\Posts->news[ D:\www\touzipingtai\code\php\tzpt\application\index\controller\Posts.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ VIEW ] D:\www\touzipingtai\code\php\tzpt\public/../application/index\view\posts\news.html [ array (
+  0 => 'data',
+  1 => 'recommend',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.125720s ] mysql:dbname=invest;host=139.196.255.96;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpn_news` [ RunTime:0.083604s ]
+[ sql ] [ SQL ] SELECT * FROM `tpn_news` WHERE  `nid` = 6 LIMIT 1 [ RunTime:0.083340s ]
+[ sql ] [ SQL ] UPDATE `tpn_news`  SET `browse`=browse+1  WHERE  `nid` = 6 [ RunTime:0.082994s ]
+[ sql ] [ SQL ] select nid,title from tpn_news where nid !=6 order by rand() limit 3 [ RunTime:0.083413s ]
+---------------------------------------------------------------
+[ 2017-08-10T15:21:39+08:00 ] ::1 ::1 GET /touzipingtai/code/php/tzpt/public/news/6
+[ info ] localhost/touzipingtai/code/php/tzpt/public/news/6 [运行时间：0.563206s][吞吐率：1.78req/s] [内存消耗：2,719.18kb] [文件加载：51]
+[ info ] [ LANG ] D:\www\touzipingtai\code\php\tzpt\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => NULL,
+    1 => 'Posts',
+    2 => 'news',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8114503680; 9Lhb_2132_ulastactivity=6ef9Fun4%2FGSxTE5Ys0OkBcpSyVpjaAQuphd4JIu11PuoZYOiXVr5; OZ_1U_2119=vid=v8aa896266128b.0&ctime=1489972702&ltime=1488520476; Phpstorm-ff26543c=98c78e61-f066-493b-99a6-39905a27f7dc; jWM2jv_admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+  'id' => '6',
+)
+[ info ] [ RUN ] app\index\controller\Posts->news[ D:\www\touzipingtai\code\php\tzpt\application\index\controller\Posts.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ VIEW ] D:\www\touzipingtai\code\php\tzpt\public/../application/index\view\posts\news.html [ array (
+  0 => 'data',
+  1 => 'recommend',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.126211s ] mysql:dbname=invest;host=139.196.255.96;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpn_news` [ RunTime:0.089956s ]
+[ sql ] [ SQL ] SELECT * FROM `tpn_news` WHERE  `nid` = 6 LIMIT 1 [ RunTime:0.091176s ]
+[ sql ] [ SQL ] UPDATE `tpn_news`  SET `browse`=browse+1  WHERE  `nid` = 6 [ RunTime:0.078184s ]
+[ sql ] [ SQL ] select nid,title from tpn_news where nid !=6 order by rand() limit 3 [ RunTime:0.077884s ]
+---------------------------------------------------------------
+[ 2017-08-10T15:21:47+08:00 ] ::1 ::1 GET /touzipingtai/code/php/tzpt/public/news/6
+[ info ] localhost/touzipingtai/code/php/tzpt/public/news/6 [运行时间：0.528560s][吞吐率：1.89req/s] [内存消耗：2,719.18kb] [文件加载：51]
+[ info ] [ LANG ] D:\www\touzipingtai\code\php\tzpt\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => NULL,
+    1 => 'Posts',
+    2 => 'news',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8114503680; 9Lhb_2132_ulastactivity=6ef9Fun4%2FGSxTE5Ys0OkBcpSyVpjaAQuphd4JIu11PuoZYOiXVr5; OZ_1U_2119=vid=v8aa896266128b.0&ctime=1489972702&ltime=1488520476; Phpstorm-ff26543c=98c78e61-f066-493b-99a6-39905a27f7dc; jWM2jv_admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+  'id' => '6',
+)
+[ info ] [ RUN ] app\index\controller\Posts->news[ D:\www\touzipingtai\code\php\tzpt\application\index\controller\Posts.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ VIEW ] D:\www\touzipingtai\code\php\tzpt\public/../application/index\view\posts\news.html [ array (
+  0 => 'data',
+  1 => 'recommend',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.122169s ] mysql:dbname=invest;host=139.196.255.96;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpn_news` [ RunTime:0.081724s ]
+[ sql ] [ SQL ] SELECT * FROM `tpn_news` WHERE  `nid` = 6 LIMIT 1 [ RunTime:0.080131s ]
+[ sql ] [ SQL ] UPDATE `tpn_news`  SET `browse`=browse+1  WHERE  `nid` = 6 [ RunTime:0.081507s ]
+[ sql ] [ SQL ] select nid,title from tpn_news where nid !=6 order by rand() limit 3 [ RunTime:0.077938s ]
+---------------------------------------------------------------
+[ 2017-08-10T15:21:50+08:00 ] ::1 ::1 GET /touzipingtai/code/php/tzpt/public/news/6
+[ info ] localhost/touzipingtai/code/php/tzpt/public/news/6 [运行时间：0.525028s][吞吐率：1.90req/s] [内存消耗：2,719.35kb] [文件加载：51]
+[ info ] [ LANG ] D:\www\touzipingtai\code\php\tzpt\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => NULL,
+    1 => 'Posts',
+    2 => 'news',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8114503680; 9Lhb_2132_ulastactivity=6ef9Fun4%2FGSxTE5Ys0OkBcpSyVpjaAQuphd4JIu11PuoZYOiXVr5; OZ_1U_2119=vid=v8aa896266128b.0&ctime=1489972702&ltime=1488520476; Phpstorm-ff26543c=98c78e61-f066-493b-99a6-39905a27f7dc; jWM2jv_admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+  'id' => '6',
+)
+[ info ] [ RUN ] app\index\controller\Posts->news[ D:\www\touzipingtai\code\php\tzpt\application\index\controller\Posts.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ VIEW ] D:\www\touzipingtai\code\php\tzpt\public/../application/index\view\posts\news.html [ array (
+  0 => 'data',
+  1 => 'recommend',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.123494s ] mysql:dbname=invest;host=139.196.255.96;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpn_news` [ RunTime:0.084853s ]
+[ sql ] [ SQL ] SELECT * FROM `tpn_news` WHERE  `nid` = 6 LIMIT 1 [ RunTime:0.080576s ]
+[ sql ] [ SQL ] UPDATE `tpn_news`  SET `browse`=browse+1  WHERE  `nid` = 6 [ RunTime:0.076778s ]
+[ sql ] [ SQL ] select nid,title from tpn_news where nid !=6 order by rand() limit 3 [ RunTime:0.078857s ]
+---------------------------------------------------------------
+[ 2017-08-10T15:22:03+08:00 ] ::1 ::1 GET /touzipingtai/code/php/tzpt/public/news/6
+[ info ] localhost/touzipingtai/code/php/tzpt/public/news/6 [运行时间：0.532699s][吞吐率：1.88req/s] [内存消耗：2,719.18kb] [文件加载：51]
+[ info ] [ LANG ] D:\www\touzipingtai\code\php\tzpt\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => NULL,
+    1 => 'Posts',
+    2 => 'news',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8114503680; 9Lhb_2132_ulastactivity=6ef9Fun4%2FGSxTE5Ys0OkBcpSyVpjaAQuphd4JIu11PuoZYOiXVr5; OZ_1U_2119=vid=v8aa896266128b.0&ctime=1489972702&ltime=1488520476; Phpstorm-ff26543c=98c78e61-f066-493b-99a6-39905a27f7dc; jWM2jv_admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+  'id' => '6',
+)
+[ info ] [ RUN ] app\index\controller\Posts->news[ D:\www\touzipingtai\code\php\tzpt\application\index\controller\Posts.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ VIEW ] D:\www\touzipingtai\code\php\tzpt\public/../application/index\view\posts\news.html [ array (
+  0 => 'data',
+  1 => 'recommend',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.122696s ] mysql:dbname=invest;host=139.196.255.96;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpn_news` [ RunTime:0.086703s ]
+[ sql ] [ SQL ] SELECT * FROM `tpn_news` WHERE  `nid` = 6 LIMIT 1 [ RunTime:0.082762s ]
+[ sql ] [ SQL ] UPDATE `tpn_news`  SET `browse`=browse+1  WHERE  `nid` = 6 [ RunTime:0.080097s ]
+[ sql ] [ SQL ] select nid,title from tpn_news where nid !=6 order by rand() limit 3 [ RunTime:0.082251s ]
+---------------------------------------------------------------
+[ 2017-08-10T15:22:10+08:00 ] ::1 ::1 GET /touzipingtai/code/php/tzpt/public/news/6
+[ info ] localhost/touzipingtai/code/php/tzpt/public/news/6 [运行时间：0.535070s][吞吐率：1.87req/s] [内存消耗：2,719.18kb] [文件加载：51]
+[ info ] [ LANG ] D:\www\touzipingtai\code\php\tzpt\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => NULL,
+    1 => 'Posts',
+    2 => 'news',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8114503680; 9Lhb_2132_ulastactivity=6ef9Fun4%2FGSxTE5Ys0OkBcpSyVpjaAQuphd4JIu11PuoZYOiXVr5; OZ_1U_2119=vid=v8aa896266128b.0&ctime=1489972702&ltime=1488520476; Phpstorm-ff26543c=98c78e61-f066-493b-99a6-39905a27f7dc; jWM2jv_admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+  'id' => '6',
+)
+[ info ] [ RUN ] app\index\controller\Posts->news[ D:\www\touzipingtai\code\php\tzpt\application\index\controller\Posts.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ VIEW ] D:\www\touzipingtai\code\php\tzpt\public/../application/index\view\posts\news.html [ array (
+  0 => 'data',
+  1 => 'recommend',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.129057s ] mysql:dbname=invest;host=139.196.255.96;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpn_news` [ RunTime:0.084500s ]
+[ sql ] [ SQL ] SELECT * FROM `tpn_news` WHERE  `nid` = 6 LIMIT 1 [ RunTime:0.083741s ]
+[ sql ] [ SQL ] UPDATE `tpn_news`  SET `browse`=browse+1  WHERE  `nid` = 6 [ RunTime:0.080493s ]
+[ sql ] [ SQL ] select nid,title from tpn_news where nid !=6 order by rand() limit 3 [ RunTime:0.082167s ]
+---------------------------------------------------------------
+[ 2017-08-10T15:22:16+08:00 ] ::1 ::1 GET /touzipingtai/code/php/tzpt/public/news/6
+[ info ] localhost/touzipingtai/code/php/tzpt/public/news/6 [运行时间：0.767244s][吞吐率：1.30req/s] [内存消耗：2,719.18kb] [文件加载：51]
+[ info ] [ LANG ] D:\www\touzipingtai\code\php\tzpt\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => NULL,
+    1 => 'Posts',
+    2 => 'news',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8114503680; 9Lhb_2132_ulastactivity=6ef9Fun4%2FGSxTE5Ys0OkBcpSyVpjaAQuphd4JIu11PuoZYOiXVr5; OZ_1U_2119=vid=v8aa896266128b.0&ctime=1489972702&ltime=1488520476; Phpstorm-ff26543c=98c78e61-f066-493b-99a6-39905a27f7dc; jWM2jv_admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+  'id' => '6',
+)
+[ info ] [ RUN ] app\index\controller\Posts->news[ D:\www\touzipingtai\code\php\tzpt\application\index\controller\Posts.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ VIEW ] D:\www\touzipingtai\code\php\tzpt\public/../application/index\view\posts\news.html [ array (
+  0 => 'data',
+  1 => 'recommend',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.236530s ] mysql:dbname=invest;host=139.196.255.96;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpn_news` [ RunTime:0.134295s ]
+[ sql ] [ SQL ] SELECT * FROM `tpn_news` WHERE  `nid` = 6 LIMIT 1 [ RunTime:0.124502s ]
+[ sql ] [ SQL ] UPDATE `tpn_news`  SET `browse`=browse+1  WHERE  `nid` = 6 [ RunTime:0.095487s ]
+[ sql ] [ SQL ] select nid,title from tpn_news where nid !=6 order by rand() limit 3 [ RunTime:0.099763s ]
+---------------------------------------------------------------
+[ 2017-08-10T15:22:23+08:00 ] ::1 ::1 GET /touzipingtai/code/php/tzpt/public/news/6
+[ info ] localhost/touzipingtai/code/php/tzpt/public/news/6 [运行时间：0.519963s][吞吐率：1.92req/s] [内存消耗：2,719.18kb] [文件加载：51]
+[ info ] [ LANG ] D:\www\touzipingtai\code\php\tzpt\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => NULL,
+    1 => 'Posts',
+    2 => 'news',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8114503680; 9Lhb_2132_ulastactivity=6ef9Fun4%2FGSxTE5Ys0OkBcpSyVpjaAQuphd4JIu11PuoZYOiXVr5; OZ_1U_2119=vid=v8aa896266128b.0&ctime=1489972702&ltime=1488520476; Phpstorm-ff26543c=98c78e61-f066-493b-99a6-39905a27f7dc; jWM2jv_admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+  'id' => '6',
+)
+[ info ] [ RUN ] app\index\controller\Posts->news[ D:\www\touzipingtai\code\php\tzpt\application\index\controller\Posts.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ VIEW ] D:\www\touzipingtai\code\php\tzpt\public/../application/index\view\posts\news.html [ array (
+  0 => 'data',
+  1 => 'recommend',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.120127s ] mysql:dbname=invest;host=139.196.255.96;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpn_news` [ RunTime:0.083510s ]
+[ sql ] [ SQL ] SELECT * FROM `tpn_news` WHERE  `nid` = 6 LIMIT 1 [ RunTime:0.080722s ]
+[ sql ] [ SQL ] UPDATE `tpn_news`  SET `browse`=browse+1  WHERE  `nid` = 6 [ RunTime:0.078431s ]
+[ sql ] [ SQL ] select nid,title from tpn_news where nid !=6 order by rand() limit 3 [ RunTime:0.077393s ]
+---------------------------------------------------------------
+[ 2017-08-10T15:22:31+08:00 ] ::1 ::1 GET /touzipingtai/code/php/tzpt/public/news/6
+[ info ] localhost/touzipingtai/code/php/tzpt/public/news/6 [运行时间：0.539144s][吞吐率：1.85req/s] [内存消耗：2,719.18kb] [文件加载：51]
+[ info ] [ LANG ] D:\www\touzipingtai\code\php\tzpt\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => NULL,
+    1 => 'Posts',
+    2 => 'news',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8114503680; 9Lhb_2132_ulastactivity=6ef9Fun4%2FGSxTE5Ys0OkBcpSyVpjaAQuphd4JIu11PuoZYOiXVr5; OZ_1U_2119=vid=v8aa896266128b.0&ctime=1489972702&ltime=1488520476; Phpstorm-ff26543c=98c78e61-f066-493b-99a6-39905a27f7dc; jWM2jv_admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+  'id' => '6',
+)
+[ info ] [ RUN ] app\index\controller\Posts->news[ D:\www\touzipingtai\code\php\tzpt\application\index\controller\Posts.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ VIEW ] D:\www\touzipingtai\code\php\tzpt\public/../application/index\view\posts\news.html [ array (
+  0 => 'data',
+  1 => 'recommend',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.127545s ] mysql:dbname=invest;host=139.196.255.96;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpn_news` [ RunTime:0.088283s ]
+[ sql ] [ SQL ] SELECT * FROM `tpn_news` WHERE  `nid` = 6 LIMIT 1 [ RunTime:0.086708s ]
+[ sql ] [ SQL ] UPDATE `tpn_news`  SET `browse`=browse+1  WHERE  `nid` = 6 [ RunTime:0.081229s ]
+[ sql ] [ SQL ] select nid,title from tpn_news where nid !=6 order by rand() limit 3 [ RunTime:0.080367s ]
+---------------------------------------------------------------
+[ 2017-08-10T15:22:57+08:00 ] ::1 ::1 GET /touzipingtai/code/php/tzpt/public/news/6
+[ info ] localhost/touzipingtai/code/php/tzpt/public/news/6 [运行时间：0.723585s][吞吐率：1.38req/s] [内存消耗：2,719.18kb] [文件加载：51]
+[ info ] [ LANG ] D:\www\touzipingtai\code\php\tzpt\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => NULL,
+    1 => 'Posts',
+    2 => 'news',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8114503680; 9Lhb_2132_ulastactivity=6ef9Fun4%2FGSxTE5Ys0OkBcpSyVpjaAQuphd4JIu11PuoZYOiXVr5; OZ_1U_2119=vid=v8aa896266128b.0&ctime=1489972702&ltime=1488520476; Phpstorm-ff26543c=98c78e61-f066-493b-99a6-39905a27f7dc; jWM2jv_admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+  'id' => '6',
+)
+[ info ] [ RUN ] app\index\controller\Posts->news[ D:\www\touzipingtai\code\php\tzpt\application\index\controller\Posts.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ VIEW ] D:\www\touzipingtai\code\php\tzpt\public/../application/index\view\posts\news.html [ array (
+  0 => 'data',
+  1 => 'recommend',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.257249s ] mysql:dbname=invest;host=139.196.255.96;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpn_news` [ RunTime:0.138801s ]
+[ sql ] [ SQL ] SELECT * FROM `tpn_news` WHERE  `nid` = 6 LIMIT 1 [ RunTime:0.089056s ]
+[ sql ] [ SQL ] UPDATE `tpn_news`  SET `browse`=browse+1  WHERE  `nid` = 6 [ RunTime:0.080834s ]
+[ sql ] [ SQL ] select nid,title from tpn_news where nid !=6 order by rand() limit 3 [ RunTime:0.081691s ]
+---------------------------------------------------------------
+[ 2017-08-10T15:23:04+08:00 ] ::1 ::1 GET /touzipingtai/code/php/tzpt/public/news/6
+[ info ] localhost/touzipingtai/code/php/tzpt/public/news/6 [运行时间：0.554731s][吞吐率：1.80req/s] [内存消耗：2,719.18kb] [文件加载：51]
+[ info ] [ LANG ] D:\www\touzipingtai\code\php\tzpt\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => NULL,
+    1 => 'Posts',
+    2 => 'news',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8114503680; 9Lhb_2132_ulastactivity=6ef9Fun4%2FGSxTE5Ys0OkBcpSyVpjaAQuphd4JIu11PuoZYOiXVr5; OZ_1U_2119=vid=v8aa896266128b.0&ctime=1489972702&ltime=1488520476; Phpstorm-ff26543c=98c78e61-f066-493b-99a6-39905a27f7dc; jWM2jv_admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+  'id' => '6',
+)
+[ info ] [ RUN ] app\index\controller\Posts->news[ D:\www\touzipingtai\code\php\tzpt\application\index\controller\Posts.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ VIEW ] D:\www\touzipingtai\code\php\tzpt\public/../application/index\view\posts\news.html [ array (
+  0 => 'data',
+  1 => 'recommend',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.134529s ] mysql:dbname=invest;host=139.196.255.96;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpn_news` [ RunTime:0.089662s ]
+[ sql ] [ SQL ] SELECT * FROM `tpn_news` WHERE  `nid` = 6 LIMIT 1 [ RunTime:0.090618s ]
+[ sql ] [ SQL ] UPDATE `tpn_news`  SET `browse`=browse+1  WHERE  `nid` = 6 [ RunTime:0.080014s ]
+[ sql ] [ SQL ] select nid,title from tpn_news where nid !=6 order by rand() limit 3 [ RunTime:0.080154s ]
+---------------------------------------------------------------
+[ 2017-08-10T15:23:17+08:00 ] ::1 ::1 GET /touzipingtai/code/php/tzpt/public/news/6
+[ info ] localhost/touzipingtai/code/php/tzpt/public/news/6 [运行时间：0.539923s][吞吐率：1.85req/s] [内存消耗：2,719.18kb] [文件加载：51]
+[ info ] [ LANG ] D:\www\touzipingtai\code\php\tzpt\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => NULL,
+    1 => 'Posts',
+    2 => 'news',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8114503680; 9Lhb_2132_ulastactivity=6ef9Fun4%2FGSxTE5Ys0OkBcpSyVpjaAQuphd4JIu11PuoZYOiXVr5; OZ_1U_2119=vid=v8aa896266128b.0&ctime=1489972702&ltime=1488520476; Phpstorm-ff26543c=98c78e61-f066-493b-99a6-39905a27f7dc; jWM2jv_admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+  'id' => '6',
+)
+[ info ] [ RUN ] app\index\controller\Posts->news[ D:\www\touzipingtai\code\php\tzpt\application\index\controller\Posts.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ VIEW ] D:\www\touzipingtai\code\php\tzpt\public/../application/index\view\posts\news.html [ array (
+  0 => 'data',
+  1 => 'recommend',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.129402s ] mysql:dbname=invest;host=139.196.255.96;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpn_news` [ RunTime:0.081651s ]
+[ sql ] [ SQL ] SELECT * FROM `tpn_news` WHERE  `nid` = 6 LIMIT 1 [ RunTime:0.081995s ]
+[ sql ] [ SQL ] UPDATE `tpn_news`  SET `browse`=browse+1  WHERE  `nid` = 6 [ RunTime:0.076775s ]
+[ sql ] [ SQL ] select nid,title from tpn_news where nid !=6 order by rand() limit 3 [ RunTime:0.077037s ]
+---------------------------------------------------------------
+[ 2017-08-10T15:23:25+08:00 ] ::1 ::1 GET /touzipingtai/code/php/tzpt/public/news/6
+[ info ] localhost/touzipingtai/code/php/tzpt/public/news/6 [运行时间：0.855075s][吞吐率：1.17req/s] [内存消耗：2,719.18kb] [文件加载：51]
+[ info ] [ LANG ] D:\www\touzipingtai\code\php\tzpt\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => NULL,
+    1 => 'Posts',
+    2 => 'news',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8114503680; 9Lhb_2132_ulastactivity=6ef9Fun4%2FGSxTE5Ys0OkBcpSyVpjaAQuphd4JIu11PuoZYOiXVr5; OZ_1U_2119=vid=v8aa896266128b.0&ctime=1489972702&ltime=1488520476; Phpstorm-ff26543c=98c78e61-f066-493b-99a6-39905a27f7dc; jWM2jv_admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+  'id' => '6',
+)
+[ info ] [ RUN ] app\index\controller\Posts->news[ D:\www\touzipingtai\code\php\tzpt\application\index\controller\Posts.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ VIEW ] D:\www\touzipingtai\code\php\tzpt\public/../application/index\view\posts\news.html [ array (
+  0 => 'data',
+  1 => 'recommend',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.309044s ] mysql:dbname=invest;host=139.196.255.96;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpn_news` [ RunTime:0.216372s ]
+[ sql ] [ SQL ] SELECT * FROM `tpn_news` WHERE  `nid` = 6 LIMIT 1 [ RunTime:0.089439s ]
+[ sql ] [ SQL ] UPDATE `tpn_news`  SET `browse`=browse+1  WHERE  `nid` = 6 [ RunTime:0.078425s ]
+[ sql ] [ SQL ] select nid,title from tpn_news where nid !=6 order by rand() limit 3 [ RunTime:0.079182s ]
+---------------------------------------------------------------
+[ 2017-08-10T15:23:33+08:00 ] ::1 ::1 GET /touzipingtai/code/php/tzpt/public/news/6
+[ info ] localhost/touzipingtai/code/php/tzpt/public/news/6 [运行时间：0.686536s][吞吐率：1.46req/s] [内存消耗：2,719.18kb] [文件加载：51]
+[ info ] [ LANG ] D:\www\touzipingtai\code\php\tzpt\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => NULL,
+    1 => 'Posts',
+    2 => 'news',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8114503680; 9Lhb_2132_ulastactivity=6ef9Fun4%2FGSxTE5Ys0OkBcpSyVpjaAQuphd4JIu11PuoZYOiXVr5; OZ_1U_2119=vid=v8aa896266128b.0&ctime=1489972702&ltime=1488520476; Phpstorm-ff26543c=98c78e61-f066-493b-99a6-39905a27f7dc; jWM2jv_admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+  'id' => '6',
+)
+[ info ] [ RUN ] app\index\controller\Posts->news[ D:\www\touzipingtai\code\php\tzpt\application\index\controller\Posts.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ VIEW ] D:\www\touzipingtai\code\php\tzpt\public/../application/index\view\posts\news.html [ array (
+  0 => 'data',
+  1 => 'recommend',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.216876s ] mysql:dbname=invest;host=139.196.255.96;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpn_news` [ RunTime:0.107973s ]
+[ sql ] [ SQL ] SELECT * FROM `tpn_news` WHERE  `nid` = 6 LIMIT 1 [ RunTime:0.114349s ]
+[ sql ] [ SQL ] UPDATE `tpn_news`  SET `browse`=browse+1  WHERE  `nid` = 6 [ RunTime:0.082019s ]
+[ sql ] [ SQL ] select nid,title from tpn_news where nid !=6 order by rand() limit 3 [ RunTime:0.079265s ]
+---------------------------------------------------------------
+[ 2017-08-10T15:24:05+08:00 ] ::1 ::1 GET /touzipingtai/code/php/tzpt/public/news/6
+[ info ] localhost/touzipingtai/code/php/tzpt/public/news/6 [运行时间：0.510766s][吞吐率：1.96req/s] [内存消耗：2,719.18kb] [文件加载：51]
+[ info ] [ LANG ] D:\www\touzipingtai\code\php\tzpt\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => NULL,
+    1 => 'Posts',
+    2 => 'news',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8114503680; 9Lhb_2132_ulastactivity=6ef9Fun4%2FGSxTE5Ys0OkBcpSyVpjaAQuphd4JIu11PuoZYOiXVr5; OZ_1U_2119=vid=v8aa896266128b.0&ctime=1489972702&ltime=1488520476; Phpstorm-ff26543c=98c78e61-f066-493b-99a6-39905a27f7dc; jWM2jv_admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+  'id' => '6',
+)
+[ info ] [ RUN ] app\index\controller\Posts->news[ D:\www\touzipingtai\code\php\tzpt\application\index\controller\Posts.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ VIEW ] D:\www\touzipingtai\code\php\tzpt\public/../application/index\view\posts\news.html [ array (
+  0 => 'data',
+  1 => 'recommend',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.120391s ] mysql:dbname=invest;host=139.196.255.96;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpn_news` [ RunTime:0.082935s ]
+[ sql ] [ SQL ] SELECT * FROM `tpn_news` WHERE  `nid` = 6 LIMIT 1 [ RunTime:0.083544s ]
+[ sql ] [ SQL ] UPDATE `tpn_news`  SET `browse`=browse+1  WHERE  `nid` = 6 [ RunTime:0.075089s ]
+[ sql ] [ SQL ] select nid,title from tpn_news where nid !=6 order by rand() limit 3 [ RunTime:0.075030s ]
+---------------------------------------------------------------
+[ 2017-08-10T15:24:21+08:00 ] ::1 ::1 GET /touzipingtai/code/php/tzpt/public/news/6
+[ info ] localhost/touzipingtai/code/php/tzpt/public/news/6 [运行时间：0.551558s][吞吐率：1.81req/s] [内存消耗：2,719.18kb] [文件加载：51]
+[ info ] [ LANG ] D:\www\touzipingtai\code\php\tzpt\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => NULL,
+    1 => 'Posts',
+    2 => 'news',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8114503680; 9Lhb_2132_ulastactivity=6ef9Fun4%2FGSxTE5Ys0OkBcpSyVpjaAQuphd4JIu11PuoZYOiXVr5; OZ_1U_2119=vid=v8aa896266128b.0&ctime=1489972702&ltime=1488520476; Phpstorm-ff26543c=98c78e61-f066-493b-99a6-39905a27f7dc; jWM2jv_admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+  'id' => '6',
+)
+[ info ] [ RUN ] app\index\controller\Posts->news[ D:\www\touzipingtai\code\php\tzpt\application\index\controller\Posts.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ VIEW ] D:\www\touzipingtai\code\php\tzpt\public/../application/index\view\posts\news.html [ array (
+  0 => 'data',
+  1 => 'recommend',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.124115s ] mysql:dbname=invest;host=139.196.255.96;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpn_news` [ RunTime:0.082779s ]
+[ sql ] [ SQL ] SELECT * FROM `tpn_news` WHERE  `nid` = 6 LIMIT 1 [ RunTime:0.083216s ]
+[ sql ] [ SQL ] UPDATE `tpn_news`  SET `browse`=browse+1  WHERE  `nid` = 6 [ RunTime:0.078192s ]
+[ sql ] [ SQL ] select nid,title from tpn_news where nid !=6 order by rand() limit 3 [ RunTime:0.101936s ]
+---------------------------------------------------------------
+[ 2017-08-10T15:51:55+08:00 ] ::1 ::1 POST /touzipingtai/code/php/tzpt/public/
+[ info ] localhost/touzipingtai/code/php/tzpt/public/ [运行时间：0.598943s][吞吐率：1.67req/s] [内存消耗：2,962.20kb] [文件加载：47]
+[ info ] [ LANG ] D:\www\touzipingtai\code\php\tzpt\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '291',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://localhost',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryApiKegs1xrDqY0lK',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/touzipingtai/code/php/tzpt/api_test.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8114503680; 9Lhb_2132_ulastactivity=6ef9Fun4%2FGSxTE5Ys0OkBcpSyVpjaAQuphd4JIu11PuoZYOiXVr5; OZ_1U_2119=vid=v8aa896266128b.0&ctime=1489972702&ltime=1488520476; Phpstorm-ff26543c=98c78e61-f066-493b-99a6-39905a27f7dc; jWM2jv_admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+  'data' => 'YXBpaWQ9V0pKTWVhQlgmYXBpa2V5PVpJS1hleEdmVkZhTkZSeTMmYXBpdHlwZT1zZW5kUHJvamVjdCZwaWQ9NDMmdXNlcl9pZD0xMyZ0b2tlbj00ZjNmM2E2Nzk3ODU5ZmYyYjQ0Njk0YTY3NDdjNmY2ZA==',
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\www\touzipingtai\code\php\tzpt\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ log ] data为：YXBpaWQ9V0pKTWVhQlgmYXBpa2V5PVpJS1hleEdmVkZhTkZSeTMmYXBpdHlwZT1zZW5kUHJvamVjdCZwaWQ9NDMmdXNlcl9pZD0xMyZ0b2tlbj00ZjNmM2E2Nzk3ODU5ZmYyYjQ0Njk0YTY3NDdjNmY2ZA==
+[ sql ] [ DB ] CONNECT:[ UseTime:0.119656s ] mysql:dbname=invest;host=139.196.255.96;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpn_user` [ RunTime:0.079937s ]
+[ sql ] [ SQL ] SELECT * FROM `tpn_user` WHERE  `logintoken` = '4f3f3a6797859ff2b44694a6747c6f6d' LIMIT 1 [ RunTime:0.077977s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpn_project_send` [ RunTime:0.076226s ]
+[ sql ] [ SQL ] INSERT INTO `tpn_project_send` (`pid` , `user_id` , `add_time`) VALUES (43 , 13 , 1502351515) [ RunTime:0.089195s ]
+---------------------------------------------------------------
+[ 2017-08-10T15:52:07+08:00 ] ::1 ::1 POST /touzipingtai/code/php/tzpt/public/
+[ info ] localhost/touzipingtai/code/php/tzpt/public/ [运行时间：0.421706s][吞吐率：2.37req/s] [内存消耗：2,964.59kb] [文件加载：47]
+[ info ] [ LANG ] D:\www\touzipingtai\code\php\tzpt\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '291',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://localhost',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryqAZW2VTOSZaVkgbI',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/touzipingtai/code/php/tzpt/api_test.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8114503680; 9Lhb_2132_ulastactivity=6ef9Fun4%2FGSxTE5Ys0OkBcpSyVpjaAQuphd4JIu11PuoZYOiXVr5; OZ_1U_2119=vid=v8aa896266128b.0&ctime=1489972702&ltime=1488520476; Phpstorm-ff26543c=98c78e61-f066-493b-99a6-39905a27f7dc; jWM2jv_admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+  'data' => 'YXBpaWQ9V0pKTWVhQlgmYXBpa2V5PVpJS1hleEdmVkZhTkZSeTMmYXBpdHlwZT1zZW5kUHJvamVjdCZwaWQ9NDMmdXNlcl9pZD0xMyZ0b2tlbj00ZjNmM2E2Nzk3ODU5ZmYyYjQ0Njk0YTY3NDdjNmY2ZA==',
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\www\touzipingtai\code\php\tzpt\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ log ] data为：YXBpaWQ9V0pKTWVhQlgmYXBpa2V5PVpJS1hleEdmVkZhTkZSeTMmYXBpdHlwZT1zZW5kUHJvamVjdCZwaWQ9NDMmdXNlcl9pZD0xMyZ0b2tlbj00ZjNmM2E2Nzk3ODU5ZmYyYjQ0Njk0YTY3NDdjNmY2ZA==
+[ sql ] [ DB ] CONNECT:[ UseTime:0.127846s ] mysql:dbname=invest;host=139.196.255.96;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpn_user` [ RunTime:0.086909s ]
+[ sql ] [ SQL ] SELECT * FROM `tpn_user` WHERE  `logintoken` = '4f3f3a6797859ff2b44694a6747c6f6d' LIMIT 1 [ RunTime:0.083472s ]
+---------------------------------------------------------------
+[ 2017-08-10T15:52:26+08:00 ] ::1 ::1 POST /touzipingtai/code/php/tzpt/public/
+[ info ] localhost/touzipingtai/code/php/tzpt/public/ [运行时间：0.516780s][吞吐率：1.94req/s] [内存消耗：2,964.83kb] [文件加载：47]
+[ info ] [ LANG ] D:\www\touzipingtai\code\php\tzpt\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '291',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://localhost',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryA7lJNVIHpFVHRZi6',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/touzipingtai/code/php/tzpt/api_test.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8114503680; 9Lhb_2132_ulastactivity=6ef9Fun4%2FGSxTE5Ys0OkBcpSyVpjaAQuphd4JIu11PuoZYOiXVr5; OZ_1U_2119=vid=v8aa896266128b.0&ctime=1489972702&ltime=1488520476; Phpstorm-ff26543c=98c78e61-f066-493b-99a6-39905a27f7dc; jWM2jv_admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+  'data' => 'YXBpaWQ9V0pKTWVhQlgmYXBpa2V5PVpJS1hleEdmVkZhTkZSeTMmYXBpdHlwZT1zZW5kUHJvamVjdCZwaWQ9NDMmdXNlcl9pZD0xMyZ0b2tlbj00ZjNmM2E2Nzk3ODU5ZmYyYjQ0Njk0YTY3NDdjNmY2ZA==',
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\www\touzipingtai\code\php\tzpt\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ log ] data为：YXBpaWQ9V0pKTWVhQlgmYXBpa2V5PVpJS1hleEdmVkZhTkZSeTMmYXBpdHlwZT1zZW5kUHJvamVjdCZwaWQ9NDMmdXNlcl9pZD0xMyZ0b2tlbj00ZjNmM2E2Nzk3ODU5ZmYyYjQ0Njk0YTY3NDdjNmY2ZA==
+[ sql ] [ DB ] CONNECT:[ UseTime:0.130626s ] mysql:dbname=invest;host=139.196.255.96;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpn_user` [ RunTime:0.090995s ]
+[ sql ] [ SQL ] SELECT * FROM `tpn_user` WHERE  `logintoken` = '4f3f3a6797859ff2b44694a6747c6f6d' LIMIT 1 [ RunTime:0.092766s ]
+---------------------------------------------------------------
+[ 2017-08-10T15:53:15+08:00 ] ::1 ::1 POST /touzipingtai/code/php/tzpt/public/
+[ info ] localhost/touzipingtai/code/php/tzpt/public/ [运行时间：0.818482s][吞吐率：1.22req/s] [内存消耗：2,962.17kb] [文件加载：47]
+[ info ] [ LANG ] D:\www\touzipingtai\code\php\tzpt\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '291',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://localhost',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryfAAYoKE4CO6XXCkQ',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/touzipingtai/code/php/tzpt/api_test.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=8114503680; 9Lhb_2132_ulastactivity=6ef9Fun4%2FGSxTE5Ys0OkBcpSyVpjaAQuphd4JIu11PuoZYOiXVr5; OZ_1U_2119=vid=v8aa896266128b.0&ctime=1489972702&ltime=1488520476; Phpstorm-ff26543c=98c78e61-f066-493b-99a6-39905a27f7dc; jWM2jv_admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+  'data' => 'YXBpaWQ9V0pKTWVhQlgmYXBpa2V5PVpJS1hleEdmVkZhTkZSeTMmYXBpdHlwZT1zZW5kUHJvamVjdCZwaWQ9NDMmdXNlcl9pZD0xMyZ0b2tlbj00ZjNmM2E2Nzk3ODU5ZmYyYjQ0Njk0YTY3NDdjNmY2ZA==',
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\www\touzipingtai\code\php\tzpt\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ log ] data为：YXBpaWQ9V0pKTWVhQlgmYXBpa2V5PVpJS1hleEdmVkZhTkZSeTMmYXBpdHlwZT1zZW5kUHJvamVjdCZwaWQ9NDMmdXNlcl9pZD0xMyZ0b2tlbj00ZjNmM2E2Nzk3ODU5ZmYyYjQ0Njk0YTY3NDdjNmY2ZA==
+[ sql ] [ DB ] CONNECT:[ UseTime:0.118320s ] mysql:dbname=invest;host=139.196.255.96;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpn_user` [ RunTime:0.091057s ]
+[ sql ] [ SQL ] SELECT * FROM `tpn_user` WHERE  `logintoken` = '4f3f3a6797859ff2b44694a6747c6f6d' LIMIT 1 [ RunTime:0.145707s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpn_project_send` [ RunTime:0.118976s ]
+[ sql ] [ SQL ] INSERT INTO `tpn_project_send` (`pid` , `user_id` , `add_time`) VALUES (43 , 13 , 1502351595) [ RunTime:0.093462s ]

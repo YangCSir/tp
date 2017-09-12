@@ -1,0 +1,38 @@
+{include file="common/header"}
+<div id="right_content">
+    <form action="" class="verify-form rform">
+        <table class="table">
+            <tr>
+                <td width="150"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th width="150" class="msg">名称</th>
+                <td><input name="name" type="text" class="form-control w400" datatype="*"></td>
+            </tr>
+            <tr>
+                <th class="msg">所属分类</th>
+                <td>
+                    <select name="pid" class="form-control w426" datatype="n">
+                        <option value="0">顶级分类</option>
+                        {foreach $cat AS $n => $m}
+                            <option value="{$m.pcid}">{$m.name}</option>
+                        {/foreach}
+                    </select>
+                </td>
+            </tr>
+  
+            <tr>
+                <td></td>
+                <td><button type="submit" class="btn btn-success">Save Change</button></td>
+            </tr>
+        </table>        
+    </form>
+</div>
+   
+<script>
+$(function(){
+     
+})
+</script>
+{include file="common/footer"}

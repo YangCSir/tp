@@ -1,0 +1,65 @@
+{include file="common/header"}
+<div id="right_content">
+    <div class="top-info">
+        <i class="glyphicon glyphicon-home"></i>
+        权限组管理
+    </div>
+    
+    <!-- 菜单 -->
+    <ul class="clearfix menu">
+        <li><a href="#" class="this">数据列表</a></li>
+        <li>
+            <a 
+                href="{:url('add')}" target="frame_dispose" 
+                onclick="open_frame('添加', 1, 1, true);">
+                添加数据
+            </a>
+        </li>
+
+    </ul>
+
+    <div class="table-box">
+
+        <table class="table">
+            <tr>
+                <th width="20">#</th>
+                <th>组名称</th>
+                <!--<th>无权限的菜单是否显示</th>-->
+                <th>添加时间</th>
+                <th>修改时间</th>
+
+                <th width="100">操作</th>
+            </tr>
+            {if (!empty($data))}
+            {foreach $data AS $v}
+                <tr>
+                    <td></td>
+                    <td>{$v.name}</td>
+                    <!--<td>
+                        {if condition="$v['is_show'] eq 1"}
+                        <span class="label label-info f12">是</span>
+                        {else}
+                        <span class="label label-danger f12">否</span>
+                        {/if}
+                    </td>-->
+                    <td>{:date('Y-m-d H:i:s', $v.add_time)}</td>
+                    <td>{$v.edit_time ? date('Y-m-d H:i:s', $v.edit_time) : '----'}</td>
+
+                    <td class="operation">
+                        <a href="{:url('edit',['id'=>$v['id']])}" target="frame_dispose" 
+                        onclick="open_frame('修改数据', 100, 100, true)" 
+                        class="glyphicon glyphicon-edit" title="编辑"></a><a class="glyphicon glyphicon-trash" 
+                        onclick="ajax_post('{:url('del')}',{'id':{$v['id']}});" title="删除"></a>
+                    </td>
+                </tr>
+            {/foreach}
+            {/if}
+        </table>
+        <div></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+</script>
+{include file="common/footer"}

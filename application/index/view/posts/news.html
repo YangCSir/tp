@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>{$data['title']}</title>
+    <link rel="stylesheet" href="/static/css/index.css">
+    <!--{load file="__static__/css/index.css" /}-->
+</head>
+<body>
+<div class="headline">{$data['title']}</div>
+<div class="middle">
+    <div class="time">{$data.add_time|date="m-d H:i",###}</div>
+    <div class="browser">阅读量 {$data.browse}</div>
+    <div style="clear: both;"></div>
+</div>
+
+<div class="intro">
+    <div>
+        简介：{$data['intro']}
+    </div>
+</div>
+<div class="content">
+    <div>
+        {$data['detail']}
+    </div>
+</div>
+
+<!--<div class="ad">-->
+<!--<img src="__static__/img/305463.jpg" height="172">-->
+<!--</div>-->
+<div class="recommend">
+    <div class="head">相关文章</div>
+    {foreach name="recommend" item="v"}
+        <div class="title"><a href="http://touzipingtai.zpftech.com/news/{$v['nid']}">{$v['title']}</a></div>
+    {/foreach}
+</div>
+</body>
+</html>

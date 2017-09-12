@@ -1,0 +1,55 @@
+{include file="common/header"}
+<div id="right_content">
+    <div class="top-info">
+        <i class="glyphicon glyphicon-home"></i>
+        菜单分类
+    </div>
+    
+    <!-- 菜单 -->
+    <ul class="clearfix menu">
+        <li>
+            <a href="#" class="this">数据列表</a>
+        </li>
+        <li>
+            <a 
+                href="{:url('add')}" 
+                target="frame_dispose" 
+                onclick="open_frame('添加', 100, 100, true);">
+                添加数据
+            </a>
+        </li>
+    </ul>
+
+    <div class="table-box">
+        <table class="table">
+            <tr>
+                <th width="20">#</th>
+                <th>名称</th>
+                <th>图标</th>
+                <th width="100">操作</th>
+            </tr>
+            {foreach $data AS $v}
+                <tr>
+                    <td>{$v.id}</td>
+                    <td>{$v.name}</td>
+                    <td><i class="{$v.icon}"></i></td>
+                    <td class="operation">
+                        <a href="{:url('edit',['id'=>$v['id']])}" target="frame_dispose" 
+                        onclick="open_frame('Create data', 100, 100, true)" 
+                        class="glyphicon glyphicon-edit" title="编辑"></a>
+
+                        <a class="glyphicon glyphicon-trash" 
+                        onclick="ajax_post('{:url('del')}',{'id':{$v['id']}});" title="删除"></a>
+
+                    </td>
+                </tr>
+            {/foreach}
+
+        </table>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+</script>
+{include file="common/footer"}

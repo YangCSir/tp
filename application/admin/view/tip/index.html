@@ -1,0 +1,51 @@
+{include file="common/header"}
+<div id="right_content">
+    <div class="top-info">
+        <i class="glyphicon glyphicon-home"></i>
+        单页面管理
+    </div>
+
+    <!-- 菜单 -->
+    <ul class="clearfix menu">
+        {foreach $menu AS $k => $v}
+            <li><a href="{:url('',['name'=>$k])}" {if $k == $name} class="this" {/if}>{$v}</a></li>
+        {/foreach}
+    </ul>
+
+    <form action="" class="verify-form pt20 mt10" go="myreload()">
+        <table class="table">
+            <tr>
+                <th class="msg" width="200">{$menu[$name]}</th>
+                <td>
+                    {if $name == 'user_agreement'}
+                        <textarea style="width:600px; height: 400px;" name="content" id="editor" datatype="*">{$data[$name]}</textarea>
+                    {else}
+                        <textarea name="content" style="height: 300px;" datatype="*">{$data[$name]}</textarea>
+                    {/if}
+                </td>
+            </tr>
+
+            <tr>
+                <td><input type="hidden" name="name" value="{$name}"></td>
+                <td><button type="submit" class="btn btn-success">Save Change</button></td>
+            </tr>
+        </table>
+    </form>
+
+</div>
+{include file="common/ueditor"}
+<script type="text/javascript">
+    $(function(){
+        if ($('#editor').length > 0) {
+            var ue = UE.getEditor('editor', {
+                autoHeight: false,
+            });
+        }
+    })
+
+
+    function myreload(){
+        location.reload();
+    }
+</script>
+{include file="common/footer"}

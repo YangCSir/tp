@@ -1,0 +1,193 @@
+{include file="common/header"}
+<style>
+    /*#right_content table th{ height:30px; font-size:12px; text-align:center;}*/
+    #right_content table tr td,#right_content table tr th{
+        border: solid #ccc 1px;
+    }
+</style>
+<div id="right_content">
+    <form action="" class="verify-form rform">
+        <table class="table">
+            <tr>
+                <th width="180" class="msg" style="text-align: center;">组名称</th>
+                <td><input type="text" name="name" class="form-control w300 fl" datatype="*" value="{$oldData['name']}"></td>
+            </tr>
+
+            {foreach $menu AS $k => $v}
+                <tr class="main_check_{$k}">
+                    <th colspan="20">
+                        <div class="check_box fl ml10" onclick="check_all2('check_{$k}', $(this))" is-main="1" check-type="0">
+                            <span style="margin-top: 6px;"></span>
+                            <u>{$mc[$k]['name']}</u>
+                            <input type="checkbox" name="" value="">
+                        </div>
+                    </th>
+                </tr>
+                
+                {foreach $v AS $key => $val}
+                    <tr class="check_{$k} all_check">
+                        <th width="100">
+                            <div style="margin-left:50px;" class="check_box fl all_check_type" onclick="check_all2('son_check_{$val.id}', $(this))" check-type="0">
+                                <span style="margin-top: 6px;"></span>
+                                <u>{$val['name']}</u>
+                                <input type="checkbox" name="" value="">
+                            </div>
+                        </th>
+                        <td class="son_check_{$val.id} son_check">
+                            <div class="clearfix mt5">
+                                {foreach $val['method'] AS $value}
+                                    <div class="check_box fl mr10">
+                                        {if condition="array_key_exists($val['controller'], $oldData['access']) AND in_array($value['method'], $oldData['access'][$val['controller']])"}
+                                            <span class="this"></span>
+                                            <u>{$value.name}</u>
+                                            <input type="checkbox" name="{$val['controller']}[]" value="{$value.method}" checked="checked">
+                                        {else}
+                                            <span></span>
+                                            <u>{$value.name}</u>
+                                            <input type="checkbox" name="{$val['controller']}[]" value="{$value.method}">
+                                        {/if}
+                                    </div>
+                                {/foreach}
+                            </div>
+                        </td>
+                    </tr>
+                {/foreach}
+            {/foreach}
+
+            <tr>
+                <td>
+                    <input name="id" type="hidden" value="{$oldData.id}">
+                </td>
+                <td><button type="submit" class="btn btn-success">Save Change</button></td>
+            </tr> 
+        </table>  
+
+    </form>
+</div>
+   
+<script>
+$(function(){
+    // 载入时 自动选中子集
+    $.each($('.son_check'), function(index, val) {
+        // 计算对应的选中数量
+        var _clen = 0;
+        var _input = $(this).find('input');
+        $.each(_input, function(i, v) {
+            if ($(this).attr('checked') == 'checked') {
+                _clen ++;
+            }
+        });
+
+        var _class = $(this).attr('class').split(' ');
+        // 判断是否为全选中
+        if (_clen == _input.length) {
+            $('.'+_class[0]).prev('th').find('.check_box').attr({'check-type':'1'}).find('span').addClass('this').siblings('input').attr({'checked':'checked'});
+        } else {
+            $('.'+_class[0]).prev('th').find('.check_box').attr({'check-type':'0'}).find('span').removeClass('this').siblings('input').removeAttr('checked');
+        }
+    });
+
+    // 载入时 自动选中父级
+    $.each($('.all_check'), function(index, val) {
+        var _class = $(this).attr('class').split(' ');
+        var _input = $('.'+_class).find('th input');
+        var _clen = 0;
+        $.each(_input, function(i, v) {
+             if ($(this).attr('checked') == 'checked') {
+                _clen ++;
+            }
+        });
+
+        // 获取父class
+        var _main_class = $('.'+_class[0]+':eq(0)').prev('tr').attr('class');
+        // 判断是否为全选中
+        if (_clen == _input.length) {
+            $('.'+_main_class).find('.check_box').attr({'check-type':'1'}).find('span').addClass('this').siblings('input').attr({'checked':'checked'});
+        } else {
+            $('.'+_main_class).find('.check_box').attr({'check-type':'0'}).find('span').removeClass('this').siblings('input').removeAttr('checked');
+        }
+    });
+
+    // 最底层点击
+    $('.son_check .check_box').click(function(){
+        // 判断该集合有没有未被选中的
+        var input_length = $(this).parents('.son_check').find('.check_box input');
+        var input_check = 0;
+        $.each(input_length, function(index, val) {
+             if ($(this).attr('checked') == 'checked') {
+                input_check ++;
+             }
+        });
+        // console.log('all:'+input_length.length);
+        // console.log('check:'+input_check);
+        // 判断子集
+        if (input_length.length == input_check) {
+            $(this).parents('.all_check').find('th .check_box').attr({'check-type':'1'}).find('span').addClass('this').siblings('input').attr({'checked':'checked'});
+        } else {
+            $(this).parents('.all_check').find('th .check_box').attr({'check-type':'0'}).find('span').removeClass('this').siblings('input').removeAttr('checked');
+        }
+
+        // 获取元素class
+        var _class = $(this).parents('tr').attr('class').split(' ');
+        var main_input = $('.'+_class[0]).find('.all_check_type input');
+        // 判断父级
+        var main_check = 0;
+        $.each(main_input, function(index, val) {
+             if ($(this).attr('checked') == 'checked') {
+                main_check ++;
+             }
+        });
+
+        var _main_class = $('.'+_class[0]).prev('tr').attr('class');
+        if (main_input.length == main_check) {
+            $('.'+_main_class).find('th .check_box').attr({'check-type':'1'}).find('span').addClass('this').siblings('input').attr({'checked':'checked'});
+        } else {
+            $('.'+_main_class).find('th .check_box').attr({'check-type':'0'}).find('span').removeClass('this').siblings('input').removeAttr('checked');
+        }
+    })
+
+    // 二级点击
+    $('.all_check_type').click(function(){
+        // 二级选择器
+        var to_class = $(this).parents('tr').attr('class').split(' ');
+        var to_input = $('.'+to_class[0]).find('th input');
+        var to_len = 0;
+
+        $.each(to_input, function(index, val) {
+             if ($(this).attr('checked') == 'checked') {
+                to_len ++;
+             }
+        });
+
+        // 主选择器
+        var main_class = $('.'+to_class[0]).prev('tr').attr('class');
+        if (to_input.length == to_len) {
+            $('.'+main_class).find('th .check_box').attr({'check-type':'1'}).find('span').addClass('this').siblings('input').attr({'checked':'checked'});
+        } else {
+            $('.'+main_class).find('th .check_box').attr({'check-type':'0'}).find('span').removeClass('this').siblings('input').removeAttr('checked');
+        }
+    })
+})
+
+/**
+ * [check_all 点击全选]
+ */
+function check_all2(id, obj){
+    var _type = obj.attr('check-type');
+    if (_type == 0) {
+        $('.'+id).find('span').addClass('this').siblings('input').attr({'checked':'checked'});
+        obj.attr({'check-type':'1'});
+        if (obj.attr('is-main') == 1) {
+            $('.all_check_type').attr({'check-type':'1'});
+        }
+        
+    } else {
+        $('.'+id).find('span').removeClass('this').siblings('input').removeAttr('checked');
+        obj.attr({'check-type':'0'});
+        if (obj.attr('is-main') == 1) {
+            $('.all_check_type').attr({'check-type':'0'});
+        }
+    }
+}
+</script>
+{include file="common/footer"}

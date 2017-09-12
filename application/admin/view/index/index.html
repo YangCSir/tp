@@ -1,0 +1,75 @@
+{include file="common/header"}
+<script>
+    var mr = 1;
+</script>
+<!-- 顶部 -->
+<div id="top" class="clearfix">
+    <div class="logo fl">
+        <h2><span>ZPF</span> Framework</h2>
+    </div>
+    <a href="javascript:;" class="fl glyphicon glyphicon-chevron-left menu-morel vh"></a>
+    <div id="top-menu" class="clearfix fl">
+        <ul class="fl clearfix">
+        {foreach $group AS $k => $v}
+            <li {if $v['id'] == $gid} class="this" {/if} >
+                <a href="{:url('',['id'=>$v['id']])}">
+                    {$v.name}
+                </a>
+            </li>
+
+            {if $v['id'] == $gid}
+                <?php $tk = floor($k / 8)?>
+                <script>
+                    var tk = {$tk};
+                    if (tk > 0) {
+                        $('#top-menu ul').css({
+                            'left': '-' + 800 * {$tk} + 'px'
+                        });
+                        $('.menu-morel').removeClass('vh');
+                        mr += 1;
+                    }
+                </script>
+            {/if}
+        {/foreach}
+        </ul>
+    </div>
+
+    {if count($group) > 8}
+        <a href="javascript:;" class="fl glyphicon glyphicon-chevron-right menu-morer"></a>
+    {/if}
+
+    <div class="fr">
+        <p>
+            <i class="glyphicon glyphicon-user"></i> {$user.username}
+            <a href="{:url('login/login_out')}">[退出]</a>
+        </p>
+    </div>
+</div>
+
+<!-- 左侧导航 -->
+<div id="menu">
+    <h2><i class="glyphicon glyphicon-check"></i>Framework UI</h2>
+    <p>
+        <a href="{:url('table')}" target="iframe">table</a>
+        <a href="{:url('form')}" target="iframe">form</a>
+        <a href="{:url('chart')}" target="iframe">chart</a>
+    </p>
+    <p></p>
+    <?php $one = 1;?>
+    {foreach $menu AS $k => $v}
+        <h2 {if condition="$one == 1"} class="this" {/if}><i class="{$mc[$k]['icon']}"></i>{$mc[$k]['name']}</h2>
+        <p {if condition="$one == 1"} style="display: block;" {/if}>
+            {volist name="v" id="val"}
+                {if ($val['is_show'] == 1)}
+                <a href="{:url($val.controller . '/index')}" target="iframe">{$val.name}</a>
+                {/if}
+            {/volist}
+        </p>
+        <?php $one = 0;?>
+    {/foreach}
+</div>
+
+<div id="content">
+    <iframe src="{:url('index/welcome',['id'=>$id])}" scrolling="auto" frameborder="0" name="iframe"></iframe>
+</div>
+{include file="common/footer"}

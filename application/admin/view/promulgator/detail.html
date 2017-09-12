@@ -1,0 +1,67 @@
+{include file="common/header"}
+<style>
+    #right_content table tr td,#right_content table tr th{
+        border: solid #f1f1f1 1px;
+    }
+</style>
+<div id="right_content">
+    <form action="" class="verify-form rform">
+        <table class="table">
+            <input type="password" style="position:absolute; z-index: -1;">
+            <tr>
+                <th width="150" class="msg">姓名</th>
+                <td><p class="lh35">{$data.name}</p></td>
+            </tr>
+            <tr>
+                <th width="150" class="msg">身份证号码</th>
+                <td><p class="lh35">{$data.idcard}</p></td>
+            </tr>
+            <tr>
+                <th width="150" class="msg">手持身份证</th>
+                <td><img src="{$data.idimg}" style="width: 200px;" alt=""></td>
+            </tr>
+            <tr>
+                <th width="150" class="msg">身份正面照</th>
+                <td><img src="{$data.idcard_img}" style="width: 200px;" alt=""></td>
+            </tr>
+
+            <tr>
+                <th width="150" class="msg">公司名称</th>
+                <td><p class="lh35">{$data.company_name}</p></td>
+            </tr>
+            <tr>
+                <th width="150" class="msg">公司职位</th>
+                <td><p class="lh35">{$data.company_job}</p></td>
+            </tr>
+            <tr>
+                <th width="150" class="msg">营业执照</th>
+                <td><img src="{$data.business_license}" style="width: 200px;" alt=""></td>
+            </tr>
+            <tr>
+                <th width="150" class="msg">名片</th>
+                <td><img src="{$data.card}" style="width: 200px;" alt=""></td>
+            </tr>
+
+            <tr>
+                <th class="msg">审核状态</th>
+                <td>
+                    <p class="mt10">
+                    {if $data.status == -1}
+                    <span class="label label-warning">待审核</span>
+                    {elseif $data.status == 1}
+                    <span class="label label-success">通过</span>
+                    {elseif $data.status == 2}
+                    <span class="label label-danger">拒绝</span><br>
+                    <span class="lh30">拒绝理由：{$data.err}</span>
+                    {/if}
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<script>
+
+</script>
+{include file="common/footer"}

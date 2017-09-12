@@ -1,0 +1,121 @@
+{include file="common/header"}
+<div id="right_content">
+    <div class="top-info">
+        <i class="glyphicon glyphicon-home"></i>
+        项目行业管理
+    </div>
+    
+    <!-- 菜单 -->
+    <ul class="clearfix menu">
+        <li><a href="#" class="this">数据列表</a></li>
+        <li>
+            <a 
+                href="{:url('add')}" target="frame_dispose" 
+                onclick="open_frame('添加', 100, 100, true);">
+                添加数据
+            </a>
+        </li>
+
+    </ul>
+
+    <div class="table-box">
+        <div class="table-header clearfix">
+            <form action="" method="get" class="clearfix fr">
+                <input type="text" value="{$keywords}" name="keywords" class="form-control search-in" placeholder="关键词">
+                <button onclick="loding();" type="submit" class="btn btn-info btn-sm fl">
+                    <i class="glyphicon glyphicon-search"></i>
+                </button>
+            </form>
+        </div>
+
+        <table class="table">
+            <tr>
+                <th width="20">
+                    #
+                </th>
+                <th width="50">id</th>
+                <th>名称</th>
+                <th>状态</th>
+
+                <th width="100">操作</th>
+            </tr>
+
+            {if (!empty($data))}
+            {foreach $data AS $v}
+            <tr pid="{$v.pid}" cid="{$v.pcid}" class="show-{$v.pid}" show="0" {if $v.pid == 0} style="background: #f1f1f1;" {/if}>
+                <td></td>
+                <td>{$v.pcid}</td>
+                <td class="cat-show" style="cursor: pointer;">
+                    <?php $v['_name'] = str_repeat('&nbsp;', $v['_level'] * 4) . $v['_name'];?>
+                    {$v._name}
+                </td>
+
+                <td>
+                    {if $v.status == 1}
+                        <span class="label label-success">启用</span>
+                    {else}
+                        <span class="label label-danger">禁用</span>
+                    {/if}
+
+                </td>
+
+                <td class="operation">
+                    {if $v.status == 1}
+                    <a class="glyphicon glyphicon-remove cl-red"
+                       onclick="ajax_post('{:url('status')}',{'pcid':{$v['pcid']},'status':'0'});" title="禁用"></a>
+                    {else}
+                    <a class="glyphicon glyphicon-ok cl-gre"
+                       onclick="ajax_post('{:url('status')}',{'pcid':{$v['pcid']},'status':'1'});" title="启用"></a>
+                    {/if}
+
+                    <a href="{:url('edit',['pcid'=>$v['pcid']])}" target="frame_dispose"
+                       onclick="open_frame('修改数据', 100, 100, true)"
+                       class="glyphicon glyphicon-edit" title="编辑"></a>
+                    <a class="glyphicon glyphicon-trash" onclick="ajax_post('{:url('del')}',{'id':{$v['pcid']}});" title="删除"></a>
+                </td>
+            </tr>
+            {/foreach}
+            {/if}
+        </table>
+        <div></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function(){
+//        $('tr[pid=0]').show();
+//
+//        $('.cat-show').click(function(){
+//            var cid = $(this).parent('tr').attr('cid');
+//            var show = $(this).parent('tr').attr('show');
+//            if (show == 0) {
+//                $('.show-'+cid).fadeTo(500, 1);
+//                $(this).find('span').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+//                $(this).parent('tr').attr({'show':1});
+//            } else {
+//                // $('.show-'+cid).hide();
+//                trHide(cid);
+//                $(this).find('span').removeClass('glyphicon-minus').addClass('glyphicon-plus');
+//                $(this).parent('tr').attr({'show':0});
+//            }
+//
+//        })
+//
+//        function trHide(cid){
+//            if ($('tr[pid='+cid+']').length > 0) {
+//                $('tr[pid='+cid+']').hide();
+//                $.each($('tr[pid='+cid+']'), function(index, val) {
+//                    var show = $(this).attr('show');
+//                    console.log(show);
+//                    if (show == 1) {
+//                        $(this).attr({'show':0}).find('.cat-show span').removeClass('glyphicon-minus').addClass('glyphicon-plus');
+//                    }
+//                });
+//
+//                var pid = $('tr[pid='+cid+']').eq(0).attr('cid');
+//                trHide(pid);
+//            }
+//        }
+    })
+</script>
+{include file="common/footer"}

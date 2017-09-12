@@ -1,0 +1,77 @@
+{include file="common/header"}
+<div id="right_content">
+    <div class="top-info">
+        <i class="glyphicon glyphicon-home"></i>
+        菜单列表
+    </div>
+
+    <!-- 菜单 -->
+    <ul class="clearfix menu">
+        <li>
+            <a href="#" class="this">数据列表</a>
+        </li>
+        <li>
+            <a 
+                href="{:url('add')}" 
+                target="frame_dispose" 
+                onclick="open_frame('添加', 50, 50, true);">
+                添加数据
+            </a>
+        </li>
+    </ul>
+
+    <div class="table-box">
+
+        <table class="table">
+            <tr>
+                <th width="20">#</th>
+                <th width="200">名称</th>
+                <th width="150">控制器</th>
+                <th width="100">是否显示</th>
+                <th>方法</th>
+                <th width="100">操作</th>
+            </tr>
+        </table>
+
+        {foreach $menu AS $key => $val}
+        <h2 class="tableshow">
+            {$mc[$key]['name']}
+        </h2>
+        <table class="table table_show">
+            {volist name='val' id='v'}
+            <tr>
+                <td width="20"></td>
+                <td width="200">{$v.name}</td>
+                <td width="150">{$v.controller}</td>
+                <td width="100">
+                    {if condition="$v['is_show'] eq 1"}
+                    <span class="label label-info f12">是</span>
+                    {else}
+                    <span class="label label-danger f12">否</span>
+                    {/if}
+                </td>
+                <td>
+                    {volist name='v.method' id='val'}
+                        {$val.name}（{$val.method}）,
+                    {/volist}
+                </td>
+                <td class="operation" width='100'>
+                    <a href="{:url('edit',['id'=>$v['id']])}" target="frame_dispose" 
+                    onclick="open_frame('Create data', 100, 100, true)" 
+                    class="glyphicon glyphicon-edit" title="编辑"></a>
+
+                    <a class="glyphicon glyphicon-trash" 
+                    onclick="ajax_post('{:url('del')}',{'id':{$v['id']}});" title="删除"></a>
+
+                </td>
+            </tr>
+            {/volist}
+        </table>
+        {/foreach}
+    </div>
+</div>
+
+<script type="text/javascript">
+
+</script>
+{include file="common/footer"}

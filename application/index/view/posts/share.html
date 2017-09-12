@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link rel="stylesheet" href="/static/common/bootstrap/css/bootstrap.css?1=1">
+    <script type="text/javascript" src="/static/common/jquery-3.2.1.min.js?a=1"></script>
+    <script type="text/javascript" src="/static/common/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/js/main.js"></script>
+    <link rel="stylesheet" href="/static/css/style.css"/>
+    <title></title>
+    <script type="text/javascript">
+        window.onload = function () {
+            var designWidth = 750,
+                    rem2px = 40;
+            document.documentElement.style.fontSize = ((window.innerWidth / designWidth) * rem2px) + 'px';
+        }
+    </script>
+</head>
+
+<body>
+<div class="header">
+    <!--<a href="javascript:;" class="back"><img src="/static/img/back@2x.png"/></a>-->
+    <h3>项目详情</h3>
+    <!--<a href="javascript:;" class="collection"><img src="/static/img/心nor@2x.png"/></a>-->
+    <!--<a href="javascript:;" class="share"><img src="/static/img/分享@2x.png"/></a>-->
+</div>
+<div id="banner">
+
+    <!--<a href="javascript:;"><img src="/static/img/banner@2x.png" /></a>-->
+    <div class="item">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                {volist name="data.img_list" id="vo" key="k" length="4" }
+                {if condition="$k eq 1"}
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                {else /}
+                <li data-target="#carousel-example-generic" data-slide-to="{$k+1}"></li>
+                {/if}
+                {/volist}
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox" style="height: 260px;">
+                {volist name="data.img_list" id="vo" key="k" length="4" }
+                {if condition="$k eq 1"}
+                <div class="item active">
+                    <img src="{$vo}" alt="...">
+                </div>
+                {else /}
+                <div class="item">
+                    <img src="{$vo}" alt="...">
+                </div>
+                {/if}
+                {/volist}
+            </div>
+
+            <!--Controls -->
+            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="margin-l-r-15">
+        <h3>{$data.name}</h3>
+        <div class="title">
+            {empty name="data.pcid"}
+            <a href="javascript:;">不限</a>
+            {else /}
+            {volist name="data.pcid" id="vo"}
+            <a href="javascript:;">{$vo.name}</a>
+            {/volist}
+            {/empty}
+        </div>
+        <div style="clear: both;"></div>
+        <div class="label">
+            {empty name="data.address"}
+            <a href="javascript:;">不限</a>
+            {else /}
+            {volist name="data.address" id="vo"}
+            <a href="javascript:;">{$vo.name}</a>
+            {/volist}
+            {/empty}
+        </div>
+        <div style="clear: both;"></div>
+        <div style="margin:0.25rem 0;">
+            <div class="fl one" style="width: 80%;">{$data.company_name}</div>
+            <div class="fr"><a href="javascript:;" class="ptype">{$data.ptype}</a></div>
+            <div style="clear: both;"></div>
+        </div>
+
+
+    </div>
+    <div class="xian"></div>
+</div>
+<div class="main">
+    <div class="maim-introduce margin-l-r-15">
+        <h3>项目口号：{$data.slogan}</h3>
+
+        <div class="panel-group down" id="accordion" role="tablist" aria-multiselectable="true">
+            <h6>项目介绍</h6>
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"
+               aria-expanded="false" aria-controls="collapseTwo">
+                <img class="changeImg" src="/static/img/b6下箭头@2x.png"/>
+            </a>
+            <div class="intro" style=" overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;">
+                {$data.intro}
+            </div>
+
+            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                <div>
+                    {$data.intro}
+                </div>
+            </div>
+        </div>
+        <h6>团队介绍</h6>
+        <div class="panel down">
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree"
+               aria-expanded="false" aria-controls="collapseThree">
+                <img class="changeImg" src="/static/img/b6下箭头@2x.png"/>
+            </a>
+            <div class="intro" style=" overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;">
+                {$data.content}
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                <div>
+                    {$data.content}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--<div class="down">-->
+    <!--<div class='text-box'>-->
+    <!--Lorem ipsum dolor sit amet, consectetur adipisci ng elit. Aenean euismod bibendum laoreet. Proin gravida-->
+    <!--dolor sit da dolor s da ...-->
+    <!--<div class="collapse" id="collapseExample">-->
+    <!--<div>-->
+    <!--Lorem ipsum dolor sit amet, consectetur adipisci ng elit. Aenean euismod bibendum laoreet. Proin-->
+    <!--gravida-->
+    <!--dolor sit da dolor s da ...-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<a role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false"-->
+    <!--aria-controls="collapseExample">-->
+    <!--<img class="changeImg" src="/static/img/b6下箭头@2x.png"/>-->
+    <!--</a>-->
+    <!--</div>-->
+
+
+    <div class="hx"></div>
+    <div class="maim-information margin-l-r-15">
+        <h6>核心成员</h6>
+        {volist name="data.member" id="vo"}
+        <div class="div1">
+            <div class="div1-title">
+                <a href="" class="fl">
+                    <img src="{$vo.head_img}"/>
+                    <span>{$vo.name}</span>
+                </a>
+                <a href="" class="fr csr one">{$vo.position}</a>
+                <div style="clear: both;"></div>
+            </div>
+            {volist name="vo.work" id="v"}
+            <div style="margin-bottom: 0.5rem;">
+                <span class="txt one" style="width: 70%;">{$v.company}·{$v.job}</span>
+                <span class="date">{$v.start_time}-{$v.end_time}</span>
+                <div style="clear: both;"></div>
+            </div>
+            {/volist}
+
+            <div class="text">{$vo.intro}
+            </div>
+        </div>
+        {/volist}
+        <!--<div class="div1">-->
+        <!--<div class="div1-title">-->
+        <!--<a href="" class="fl">-->
+        <!--<img src="/static/img/E9939C51-E583-4F4E-B8E5-5A09E946B803@1x.png"/>-->
+        <!--<span>孙悟空</span>-->
+        <!--</a>-->
+        <!--<a href="" class="fr csr">安保处处长</a>-->
+        <!--<div style="clear: both;"></div>-->
+        <!--</div>-->
+        <!--<div style="margin-bottom: 0.5rem;">-->
+        <!--<span class="txt">大唐王朝·外交部长</span>-->
+        <!--<span class="date">664.01-2017.6</span>-->
+        <!--<div style="clear: both;"></div>-->
+        <!--</div>-->
+        <!--<div style="margin-bottom: 0.5rem;">-->
+        <!--<span class="txt">大慈恩学院·佛学系·博士</span>-->
+        <!--<span class="date">664.01-2017.6</span>-->
+        <!--<div style="clear: both;"></div>-->
+        <!--</div>-->
+        <!--<div class="text down">-->
+
+        <!--孙悟空生性聪明、活泼、忠诚、嫉恶如仇，在民间文 化中代表了机智、勇敢。被中国人奉为神明，孙悟空 生性聪明、活泼、忠诚、嫉恶如仇，在民间文化中代 表了机智、勇敢。被中国人奉为神明。-->
+
+        <!--<a href=""><img src="/static/img/947B4F38-AEDC-47F0-9478-813D118BA842@1x.png"/></a>-->
+        <!--</div>-->
+        <!--</div>-->
+        <div class="maim-information pic">
+            <h6>项目图片</h6>
+            <a href=""><span style="top: 10px;">查看全部</span> <img
+                    src="/static/img/6A0BE1FE-F28F-4D5E-ADFB-0B2130890F51@1x.png"/></a>
+            <div style="clear: both;"></div>
+            <ul class="">
+                {volist name="data.img_list" id="vo" length="3"}
+                <li><img src="{$vo}"/></li>
+                {/volist}
+            </ul>
+            <div style="clear: both;"></div>
+            <h6 style="margin-top: 0.5rem;">项目视频</h6>
+            <div style="clear: both;"></div>
+            <ul class="">
+                <li class="video">
+                    <img src="/static/img/0E9B1E0A-F663-4023-A1FC-F453F5CFADFC@1x.png"/>
+                    <span><img src="/static/img/play@2x.png"/></span>
+                </li>
+            </ul>
+            <div style="clear: both;"></div>
+        </div>
+    </div>
+    <div class="number">
+        <span class="fl">项目金额</span>
+        <span class="fr" style="color:#ff4646;">￥{$data.money}</span>
+        <div style="clear: both;"></div>
+    </div>
+    <div class="project-text">项目已过平台认证</div>
+</div>
+<div class="footer">
+    <!--<a href="" class="jhs">索要项目计划书</a>-->
+    <!--<a href="" class="lxfs">索要联系方式</a>-->
+    <a href="" class="lxfs">下载app</a>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+{include file="common/header"}
+<div id="right_content">
+    <form action="" class="verify-form rform">
+        <table class="table">
+            <tr>
+                <td width="150"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th class="msg">拒绝理由</th>
+                <td><textarea name="err" datatype="*"></textarea></td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input name="iid" type="hidden" value="{$data.iid}">
+                    <input type="hidden" name="status" value="{$data.status}">
+                </td>
+                <td><button type="submit" class="btn btn-success">Save Change</button></td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+{include file="common/footer"}

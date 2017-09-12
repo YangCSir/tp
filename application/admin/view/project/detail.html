@@ -1,0 +1,117 @@
+{include file="common/header"}
+<style>
+    #right_content table tr td,#right_content table tr th{
+        border: solid #f1f1f1 1px;
+    }
+</style>
+<div id="right_content">
+    <form action="" class="verify-form rform">
+        <table class="table">
+            <tr>
+                <th width="150" class="msg">项目名称</th>
+                <td><p class="lh35">{$data.name}</p></td>
+            </tr>
+            <tr>
+                <th width="150" class="msg">项目logo</th>
+                <td><img src="{$data.logo}" style="width: 200px;" alt=""></td>
+            </tr>
+            <tr>
+                <th width="150" class="msg">项目状态</th>
+                <td><p class="lh35">{$ptype[$data['ptype']]}</p></td>
+            </tr>
+
+            <tr>
+                <th width="150" class="msg">项目简介</th>
+                <td><p class="lh35">{$data.intro}</p></td>
+            </tr>
+            <tr>
+                <th width="150" class="msg">项目介绍</th>
+                <td><p class="lh35">{$data.content}</p></td>
+            </tr>
+
+            <tr>
+                <th width="150" class="msg">项目行业分类</th>
+                <td><p class="lh35">
+                    {foreach $data.cat AS $v}
+                    {$v.name} &nbsp;
+                    {/foreach}
+                </p></td>
+            </tr>
+            <tr>
+                <th width="150" class="msg">项目发展区域</th>
+                <td><p class="lh35">
+                    {foreach $data.city AS $v}
+                    {$v.name} &nbsp;
+                    {/foreach}
+                </p></td>
+            </tr>
+
+            <tr>
+                <th width="150" class="msg">项目金额</th>
+                <td><p class="lh35">{$data.money}</p></td>
+            </tr>
+
+            <tr>
+                <th width="150" class="msg">项目图片</th>
+                <td>
+                    <?php $tmp = explode(',', $data['img_list']);?>
+                    {foreach $tmp AS $v}
+                        <img src="{$v}" style="width: 200px;" alt="">
+                    {/foreach}
+                </td>
+            </tr>
+
+            <tr>
+                <th>项目视频</th>
+                <td>
+                    <video controls="controls" style="width: 400px; height: 400px;">
+                        <source src="{$data.video}" />
+                    </video>
+                </td>
+            </tr>
+
+            <tr>
+                <th width="150" class="msg">公司名称</th>
+                <td><p class="lh35">{$data.company_name}</p></td>
+            </tr>
+            <tr>
+                <th width="150" class="msg">公司地址</th>
+                <td><p class="lh35">{$data.company_address}</p></td>
+            </tr>
+
+            <tr>
+                <th width="150" class="msg">营业执照</th>
+                <td><img src="{$data.company_license}" style="width: 200px;" alt=""></td>
+            </tr>
+            <tr>
+                <th width="150" class="msg">法人身份证</th>
+                <td><img src="{$data.company_idimg}" style="width: 200px;" alt=""></td>
+            </tr>
+            <tr>
+                <th width="150" class="msg">手持身份证</th>
+                <td><img src="{$data.company_hand_idimg}" style="width: 200px;" alt=""></td>
+            </tr>
+
+            <tr>
+                <th class="msg">状态</th>
+                <td>
+                    <p class="lh35">
+                        {if $data.status == 2}
+                        <span class="label label-warning">待审核</span>
+                        {elseif $data.status == 3}
+                        <span class="label label-success">已通过</span>
+                        {elseif $data.status == 4}
+                        <span class="label label-danger">已拒绝</span> <br>
+                        <span class="lh30">拒绝理由：{$data.err}</span>
+                        {/if}
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<script>
+
+</script>
+{include file="common/footer"}

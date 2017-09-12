@@ -1,0 +1,33 @@
+{include file="common/header" /}
+<style>
+	.Validform_checktip{ display: none; }
+	#Validform_msg{ display: none; }
+</style>
+<div id="login"></div>
+<div class="bgz"></div>
+<div id="login_box_bg"></div>
+
+<div id="login_box">
+	<h2>Welcome</h2>
+	<form action="" class="verify-form" go="goto_url('{:url('index/index')}')">
+		<input type="password" style="position: absolute; top: -999px;">
+		<input type="text" name="username" class="form-control" placeholder="Username" datatype="*" nullmsg="请填写用户名" autocomplete="off">
+		<input type="password" name="password" class="form-control" placeholder="Password" datatype="*" nullmsg="请填写密码" autocomplete="off">
+		<button type="submit" class="btn btn-info">Log in</button>
+	</form>
+</div>
+<script>
+	$(function(){
+		// 表单获得焦点
+		$('form input').focus(function() {
+			$(this).css({'color':'#5bc0de'});
+			$(this).animate({'padding' : '6px 20px'}, 300);
+		});
+		// 表单失去焦点
+		$('form input').blur(function() {
+			$(this).css({'color' : '#5bc0de'});
+			$(this).animate({'padding' : '6px 12px'}, 300);
+		});
+	})
+</script>
+{include file="common/footer" /}

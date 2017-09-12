@@ -1,0 +1,85 @@
+{include file="common/header"}
+<div id="right_content">
+    <div class="top-info">
+        <i class="glyphicon glyphicon-home"></i>
+        反馈列表
+    </div>
+    
+    <!-- 菜单 -->
+    <ul class="clearfix menu">
+        <li><a href="#" class="this">数据列表</a></li>
+
+    </ul>
+
+    <div class="table-box">
+        <div class="table-header clearfix">
+            <div class="all-operation fl clearfix">
+                <button type="button" class="btn btn-danger btn-sm" 
+                onclick="all_operation('{:url('del')}','fid[]');">
+                    删除<i class="glyphicon glyphicon-trash ml5"></i>
+                </button>
+            </div>
+            <form action="" method="get" class="clearfix fr">
+                <input type="text" value="{$keywords}" name="keywords" class="form-control search-in" placeholder="账号/昵称/内容">
+                <button onclick="loding();" type="submit" class="btn btn-info btn-sm fl">
+                    <i class="glyphicon glyphicon-search"></i>
+                </button>
+            </form>
+        </div>
+
+        <table class="table">
+            <tr>
+                <th width="20">
+                    <div class="check_box">
+                        <span onclick="check_all('fid[]');"></span>
+                        <input type="checkbox" name="check_all" value="">
+                    </div>
+                </th>
+                <th>主键</th>
+                <th>账号</th>
+                <th>昵称</th>
+                <th width="400">内容</th>
+                <th width="300">图片</th>
+                <th>添加时间</th>
+
+
+                <th width="100">操作</th>
+            </tr>
+            {if (!empty($data))}
+            {foreach $data AS $v}
+                <tr>
+                    <td>
+                        <div class="check_box fl mr10">
+                            <span></span>
+                            <input type="checkbox" name="fid[]" value="{$v.fid}">
+                        </div>
+                    </td>
+                    <td>{$v.fid}</td>
+                    <td>{$v.phone}</td>
+                    <td>{$v.niname}</td>
+                    <td>{$v.content}</td>
+                    <td>
+                        {foreach $v['img'] AS $val}
+                            <img src='{$val}' style='max-width:100px;'>
+                        {/foreach}
+                        </td>
+                    <td>{$v.add_time ? date('Y-m-d H:i:s', $v.add_time) : '----'}</td>
+
+
+                    <td class="operation">
+                        <a class="glyphicon glyphicon-trash" 
+                        onclick="ajax_post('{:url('del')}',{'id':{$v['fid']}});" title="删除"></a>
+
+                    </td>
+                </tr>
+            {/foreach}
+            {/if}
+        </table>
+        <div>{$page}</div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+</script>
+{include file="common/footer"}

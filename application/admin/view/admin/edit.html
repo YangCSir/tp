@@ -1,0 +1,64 @@
+{include file="common/header"}
+<div id="right_content">
+    <form action="" class="verify-form rform">
+        <table class="table">
+            <input type="password" style="position:absolute; z-index:-1;">
+            <tr>
+                <th width="150" class="msg">用户名</th>
+                <td><input type="text" name="username" value="{$oldData.username}" class="form-control w300" datatype="*"></td>
+            </tr>
+            <tr>
+                <th width="150" class="msg">密码</th>
+                <td><input type="password" name="password" class="form-control w300"></td>
+            </tr>
+            <tr>
+                <th width="150" class="msg">所属组</th>
+                <td>
+                    <?php $one = 1;?>
+                    {foreach $group AS $k => $v}
+                    <div class="check_box fl mr10 pr">
+                        <span {if in_array($v['id'], $oldData['group_id'])} class="this" {/if}></span>
+                        <u>{$v.name}</u>
+                        {if $one == 1}
+                            <input type="checkbox" name="group_id[]" datatype="*" value="{$v.id}" 
+                                {if in_array($v['id'], $oldData['group_id'])} checked="checked" {/if}>
+                            <u class="Validform_checktip"></u>
+                        {else/}
+                            <input type="checkbox" name="group_id[]" value="{$v.id}" 
+                                {if in_array($v['id'], $oldData['group_id'])} checked="checked" {/if}>
+                        {/if}
+
+                        <?php $one = 0;?>
+                    </div>
+                    {/foreach}
+                </td>
+            </tr>
+
+            <tr>
+                <th>是否锁定</th>
+                <td>
+                    <div class="radio_box fl mr10">
+                        <span {if condition="$oldData['islock'] eq 1"}class="this"{/if}></span>
+                        <u>是</u>
+                        <input type="radio" name="islock" value="1" {if condition="$oldData['islock'] eq 1"}checked="checked"{/if}>
+                    </div>
+                    <div class="radio_box fl mr10">
+                        <span {if condition="$oldData['islock'] eq 0"}class="this"{/if}></span>
+                        <u>否</u>
+                        <input type="radio" name="islock" value="0" {if condition="$oldData['islock'] eq 0"}checked="checked"{/if}>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td><input type="hidden" name="aid" value="{$oldData['aid']}"></td>
+                <td><button type="submit" class="btn btn-success">Save Change</button></td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<script type="text/javascript">
+
+</script>
+{include file="common/footer"}

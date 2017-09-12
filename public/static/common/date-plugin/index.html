@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>jQuery日期插件jalendar2 - 站长素材</title> 
+
+<link rel="stylesheet" href="style/bootstrap.min.css">
+<link rel="stylesheet" href="style/documentation.css">
+
+<!-- Jalendar files -->
+<link rel="stylesheet" href="jalendar/style/jalendar.css" type="text/css" />
+<script type="text/javascript" src="jalendar/js/jquery-1.10.2.min.js"></script><!--jQuery-->
+<script type="text/javascript" src="jalendar/js/jalendar.min.js"></script>
+<!-- Jalendar files #end -->
+
+<link rel="stylesheet" href="style/default.min.css" media="screen" type="text/css">
+<script src="js/highlight.pack.js"></script>
+<script src="js/documentation.js"></script>
+
+<script type="text/javascript">
+$(function () {
+
+    $('#yourId').jalendar({
+        customDay: '11/01/2015',
+        color: '#577e9a', // Unlimited Colors
+        color2: '#57c8bf', // Unlimited Colors
+        lang: 'TR'
+    });
+
+    $('#yourId2').jalendar({
+        color: '#fff',
+        type: 'linker',
+        customUrl: 'http://sc.chinaz.com/?var=',
+        dateType: 'mm-dd-yyyy',
+        titleColor: '#333',
+        weekColor: '#EA5C49',
+        todayColor: '#EA5C49'
+    });
+
+    $('#yourId3').jalendar({
+        type: 'selector',
+        dateType: 'yyyy-mm-dd',
+        done: function() {
+            alert( $('#yourId3 input.data1').val() );
+        }
+    });
+
+    $('#yourId4').jalendar({
+        customDay: '04/03/1987',
+        color: '#52D3D5',
+        color2: '#52D5A4',
+        type: 'range',
+        lang: 'TR',
+        done: function() {
+            alert( $('#yourId4 input.data1').val() + ' / ' + $('#yourId4 input.data2').val() );
+        }
+    });
+});
+</script>
+
+</head>
+
+<body>
+
+
+<div id="fb-root"></div>
+
+<div class="container-fluid">
+
+    <div class="row features"></div>
+        
+    <div class="row demos">
+
+        <div class="tab" data-name="a">
+            <a href="javascript:;" class="selected">Jalendar <small>Event</small></a>
+            <a href="javascript:;">Jalendar <small>Linker</small></a>
+            <a href="javascript:;">Jalendar <small>Selector</small></a>
+            <a href="javascript:;">Jalendar <small>Range</small></a>
+        </div>
+
+        <div class="tab-container" data-name="a">
+            
+            <div class="tab-content selected">
+
+                    <div class="container">
+
+                        <div class="row">
+                            <div class="col-sm-8">
+
+                                <h1>Jalendar <small>Event</small></h1>
+
+                                <pre class="html">
+                                    <code>&lt;div id="yourId" class="jalendar"&gt;
+    &lt;div class="added-event" data-date="19-11-2015" data-title="WWDC 13 on San Francisco, LA"&gt;&lt;/div&gt;
+    &lt;div class="added-event" data-date="19-11-2015" data-title="Hazal ve Bora Nikah Töreni"&gt;&lt;/div&gt;
+    &lt;div class="added-event" data-date="21-11-2015" data-title="Hazal ve Bora Nikah Töreni"&gt;&lt;/div&gt;
+    &lt;div class="added-event" data-date="22-11-2015" data-title="Hazal ve Bora Nikah Töreni at 21"&gt;&lt;/div&gt;
+    &lt;div class="added-event" data-date="10-12-2015" data-title="Tarkan İstanbul Concert on Harbiye Açık Hava Tiyatrosu"&gt;&lt;/div&gt;
+&lt;/div&gt;</code>
+</pre>
+
+                                <pre class="js">
+                                    <code>$('#yourId').jalendar({
+    customDay: '01/11/2015',
+    color: '#577e9a', // Unlimited
+    color2: '#57c8bf', // Unlimited
+    lang: 'TR'
+});</code>
+</pre>
+
+
+                            </div>
+                            <div class="col-sm-4">
+
+                                <div id="yourId" class="jalendar">
+                                    <div class="added-event" data-date="19-11-2015" data-title="WWDC 13 on San Francisco, LA"></div>
+                                    <div class="added-event" data-date="19-11-2015" data-title="Hazal ve Bora Nikah Töreni"></div>
+                                    <div class="added-event" data-date="21-11-2015" data-title="Hazal ve Bora Nikah Töreni"></div>
+                                    <div class="added-event" data-date="22-11-2015" data-title="Hazal ve Bora Nikah Töreni at 21"></div>
+                                    <div class="added-event" data-date="10-12-2015" data-title="Tarkan İstanbul Concert on Harbiye Açık Hava Tiyatrosu"></div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+            </div>
+            <div class="tab-content">
+                
+                <div class="container">
+
+                    <div class="row">
+
+                        <div class="col-sm-8">
+
+                            <h1>Jalendar <small>Linker</small></h1>
+
+                            <pre class="html">
+                                <code>&lt;div id="yourId2" class="jalendar"&gt;&lt;/div&gt;</code>
+</pre>
+                            
+                            <pre class="js">
+                                <code>$('#yourId2').jalendar({
+    color: '#fff',
+    type: 'linker',
+    customUrl: 'http://yourcustomurl.com/yourcustomurl?var=',
+    dateType: 'mm-dd-yyyy',
+    titleColor: '#666',
+    weekColor: '#EA5C49',
+    todayColor: '#EA5C49'
+});</code>
+</pre>
+                        </div>
+                        <div class="col-sm-4">
+                            <div id="yourId2" class="jalendar"></div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="tab-content">
+                
+                <div class="container">
+
+                    <div class="row">
+                    
+                        <div class="col-sm-8">
+
+                            <h1>Jalendar <small>Selector</small></h1>
+
+                            <pre class="html">
+                                <code>&lt;div id="yourId3" class="jalendar"&gt;&lt;/div&gt;</code>
+</pre>
+
+                            <pre class="js">
+                                <code>$('#yourId3').jalendar({
+    type: 'selector',
+    dateType: 'yyyy-mm-dd',
+    done: function() {
+        alert( $('#yourId3 input.data1').val() );
+    }
+});</code>
+</pre>
+                        </div>
+                        <div class="col-sm-4">
+                            <div id="yourId3" class="jalendar"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="tab-content">
+                
+                <div class="container">
+
+                    <div class="row">
+                    
+                        <div class="col-sm-8">
+
+                            <h1>Jalendar <small>Range</small></h1>
+
+                            <pre class="html">
+                                <code>&lt;div id="yourId4" class="jalendar"&gt;&lt;/div&gt;</code>
+</pre>
+
+                            <pre>
+                                <code>$('#yourId4').jalendar({
+    color: '#37C4A7',
+    type: 'range',
+    lang: 'TR',
+    done: function() {
+        alert($('#yourId4 input.data1').val() + ' / ' + $('#yourId4 input.data2').val())
+    }
+});</code>
+</pre>
+                        </div>
+                        <div class="col-sm-4">
+                            <div id="yourId4" class="jalendar"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+<p>适用浏览器：360、FireFox、Chrome、Safari、Opera、傲游、搜狗、世界之窗. 不支持IE8及以下浏览器。</p>
+<p>来源：<a href="http://sc.chinaz.com/" target="_blank">站长素材</a></p>
+</div>
+</body>
+</html>

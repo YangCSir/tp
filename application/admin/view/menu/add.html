@@ -1,0 +1,606 @@
+{include file="common/header"}
+<div id="right_content" style="width: 1500px;">
+    <form action="" class="verify-form rform">
+        <table class="table">
+            <tr>
+                <th width="120" class="msg">所属分类</th>
+                <td>
+                    <select name="mcid" class="form-control w326">
+                        {foreach $category AS $v}
+                            <option value="{$v.id}">{$v.name}</option>
+                        {/foreach}
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th class="msg">菜单名称</th>
+                <td><input type="text" name="name" class="form-control w300" datatype="*" ></td>
+            </tr>
+            <tr>
+                <th class="msg">菜单显示</th>
+                <td class="isauto-check">
+                    <div class="radio_box fl mr10 pr">
+                        <span class="this"></span>
+                        <u>显示</u>
+                        <input type="radio" name="is_show" value="1" checked="checked">
+                    </div>
+                    <div class="radio_box fl mr10">
+                        <span></span>
+                        <u>不显示</u>
+                        <input type="radio" name="is_show" value="0">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th class="msg">控制器名称</th>
+                <td><input type="text" name="control" class="form-control w300"  datatype="*"></td>
+            </tr>
+
+            <!-- 是否自动创建操作 -->
+            <tr>
+                <th class="msg">创建类型</th>
+                <td class="isauto-check">
+                    <div class="radio_box fl mr10 pr">
+                        <span class="this"></span>
+                        <u>空控制器</u>
+                        <input type="radio" name="is_auto" value="0" checked="checked">
+                    </div>
+                    <div class="radio_box fl mr10">
+                        <span></span>
+                        <u>自动生成操作</u>
+                        <input type="radio" name="is_auto" value="1">
+                    </div>
+                </td>
+            </tr>
+
+            <tr class="data-table" style="display: none;">
+                <th class="msg">数据表</th>
+                <td><input type="text" name="table" class="form-control w300"></td>
+            </tr>
+            
+            <!-- 操作选择 -->
+            <tr class="operation-select" style="display: none;">
+                <th class="msg">生成操作</th>
+                <td>
+                    <div class="check_box fl mr10 pr">
+                        <span></span>
+                        <u>列表</u>
+                        <input type="checkbox" name="method[]" value='{"name":"列表","method":"index"}'>
+                    </div>
+                    <div class="check_box fl mr10 pr">
+                        <span></span>
+                        <u>添加</u>
+                        <input type="checkbox" name="method[]" value='{"name":"添加","method":"add"}'>
+                    </div>
+                    <div class="check_box fl mr10 pr">
+                        <span></span>
+                        <u>修改</u>
+                        <input type="checkbox" name="method[]" value='{"name":"修改","method":"edit"}'>
+                    </div>
+                    <div class="check_box fl mr10 pr">
+                        <span></span>
+                        <u>删除</u>
+                        <input type="checkbox" name="method[]" value='{"name":"删除","method":"del"}'>
+                    </div>
+                </td>
+            </tr>
+
+            <tr class="api-box" style="display: none;">
+                <th class="msg">生成API接口</th>
+                <td>
+                    <div class="check_box fl mr10 pr">
+                        <span></span>
+                        <u>列表</u>
+                        <input type="checkbox" name="api_method[]" value='{"name":"列表","method":"index"}'>
+                    </div>
+                    <div class="check_box fl mr10 pr">
+                        <span></span>
+                        <u>添加</u>
+                        <input type="checkbox" name="api_method[]" value='{"name":"添加","method":"add"}'>
+                    </div>
+                    <div class="check_box fl mr10 pr">
+                        <span></span>
+                        <u>修改</u>
+                        <input type="checkbox" name="api_method[]" value='{"name":"修改","method":"edit"}'>
+                    </div>
+                    <div class="check_box fl mr10 pr">
+                        <span></span>
+                        <u>删除</u>
+                        <input type="checkbox" name="api_method[]" value='{"name":"删除","method":"del"}'>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- 列表查询类型 begin -->
+            <tr class="stype-box" style="display: none;">
+                <th class="msg">列表查询类型</th>
+                <td class="stype-check">
+                    <div class="radio_box fl mr10 pr">
+                        <span class="this"></span>
+                        <u>单表查询</u>
+                        <input type="radio" name="select_type" value="1" checked="checked">
+                    </div>
+                    <div class="radio_box fl mr10">
+                        <span></span>
+                        <u>多表查询</u>
+                        <input type="radio" name="select_type" value="2">
+                    </div>
+                </td>
+            </tr>
+
+            <tr class="viewtype-box" style="display: none;">
+                <th class="msg">视图选择</th>
+                <td class="viewtype-check">
+                    <div class="radio_box fl mr10 pr">
+                        <span class="this"></span>
+                        <u>使用已有视图</u>
+                        <input type="radio" name="view_type" value="1" checked="checked">
+                    </div>
+                    <div class="radio_box fl mr10">
+                        <span></span>
+                        <u>创建新视图</u>
+                        <input type="radio" name="view_type" value="2">
+                    </div>
+                </td>
+            </tr>
+
+            <tr class="diyview-box" style="display: none;">
+                <th class="msg">视图名称</th>
+                <td class="">
+                    <input type="text" name="vname" class="form-control w300">
+                </td>
+            </tr>
+
+            <tr class="more-table" style="display: none;">
+                <th></th>
+                <td class="tables-box">
+                    <div class="tables-info">
+                        <div class="main-table mb10 clearfix">
+                            <div class="fl pr tf-box">
+                                <div>
+                                <input type="text" name="main_table" 
+                                    class="form-control w200" placeholder="主表名称">
+                                </div>
+                                <div class="field">
+
+                                </div>
+                            </div>
+                            <button type="button" onclick="searchTable($(this));" class="btn btn-info fl mr5">
+                                <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                            
+                            <div class="fl">
+                                <button type="button" class="btn btn-success tables-add">
+                                    <i class="glyphicon glyphicon-plus"></i>加表
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="clearfix">
+                            <div class="fl mr5">
+                                <div class="fl pr tf-box">
+                                    <div>
+                                        <input type="text" name="tables[]" class="form-control w200" placeholder="附表名称">
+                                    </div>
+                                    <div class="field">
+
+                                    </div>
+                                </div>
+                                <button type="button" onclick="searchTable($(this));" class="btn btn-info">
+                                    <i class="glyphicon glyphicon-search"></i>
+                                </button>
+                                
+                            </div>
+                            <div class="fl">
+                                <select name="join[]" id="" class="form-control w150">
+                                    <option value="LEFT JOIN">LEFT JOIN</option>
+                                    <option value="INNER JOIN">INNER JOIN</option>
+                                    <option value="RIGHT JOIN">RIGHT JOIN</option>
+                                </select>
+                            </div>
+                            <div>
+                                <p class="fl p9">ON</p>
+                                <select name="" class="form-control w100 stname">
+                                    <option value="0">请选择</option>
+                                </select>
+                                <select name="on[l][]" class="form-control w100">
+                                    <option value="0">请选择</option>
+                                </select>
+                                <p class="fl p9">=</p>
+                                <select name="" class="form-control w100 stname">
+                                    <option value="0">请选择</option>
+                                </select>
+                                <select name="on[r][]" class="form-control w100 mr5">
+                                    <option value="0">请选择</option>
+                                </select>
+                            </div>
+
+                            <button type="button" class="btn btn-danger tables-del hide">
+                                <i class="glyphicon glyphicon-minus"></i>删除
+                            </button>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <!-- 列表查询类型 end -->
+
+            <tr class="page-box" style="display: none;">
+                <th class="msg">数据是否分页</th>
+                <td>
+                    <div class="radio_box fl mr10 pr">
+                        <span class="this"></span>
+                        <u>否</u>
+                        <input type="radio" name="is_page" value="0" checked="checked">
+                    </div>
+                    <div class="radio_box fl mr10">
+                        <span></span>
+                        <u>是</u>
+                        <input type="radio" name="is_page" value="1">
+                    </div>
+                </td>
+            </tr>
+            
+            <!-- 配置模板 begin -->
+            <tr class="set-tpl" style="display: none;">
+                <th class="msg">模板配置</th>
+                <td>
+                    <div class="radio_box fl mr10 pr" onclick="diyhide();">
+                        <span class="this"></span>
+                        <u>默认配置</u>
+                        <input type="radio" name="tpl_type" value="1" checked="checked">
+                    </div>
+                    <!-- <div class="radio_box fl mr10 pr">
+                        <span></span>
+                        <u>默认配置</u>
+                        <input type="radio" name="tpl_type" value="1">
+                    </div> -->
+                    <div class="radio_box fl mr10" onclick="createTpl()">
+                        <span></span>
+                        <u>自定义配置</u>
+                        <input type="radio" name="tpl_type" value="2">
+                    </div>
+                </td>
+            </tr>
+            <!-- 配置模板 end -->
+            
+            <tr class="set-tpl-info" style="display: none;">
+                <th>添加模板配置</th>
+                <td>
+                    <ul class="set-top-ultop clearfix">
+                        <li style="width: 140px;">列名</li>
+                        <li style="width: 350px;">输入类型</li>
+                        <li style="width: 340px;">验证规则</li>
+                        <li>其他设置</li>
+                    </ul>
+                    <div class="tpl-column-set"></div>
+                    <!-- <div class="clearfix">
+                        <input type="text" class="form-control w100 fl mr10" name="column[name][]" value="用户名">
+                        <select name="column[type][]" id="" class="form-control w150 fl mr10">
+                            <option value="">text</option>
+                            <option value="">radio</option>
+                            <option value="">checkbox</option>
+                        </select>
+                        <input type="text" name="column[val][]" class="form-control w150 fl mr10" placeholder="设置值">
+                        <select name="column[rule][]" id="" class="form-control w100 fl mr10">
+                            <option value="">必须</option>
+                            <option value="">数字</option>
+                            <option value="">正则</option>
+                        </select>
+                        <input type="text" name="column[add_rule][]" 
+                        class="form-control w100 fl mr10" placeholder="附加规则">
+
+                        <div class="fl clearfix">
+                            <div class="check_box fl mr10">
+                                <span></span>
+                                <u>更新时不验证</u>
+                                <input type="checkbox" name="column[no_up_rule][]" value="1">
+                            </div>
+                            <div class="check_box fl mr10">
+                                <span></span>
+                                <u>不需要添加</u>
+                                <input type="checkbox" name="column[no_add][]" value="1">
+                            </div>
+                            <div class="check_box fl mr10">
+                                <span></span>
+                                <u>不需要更新</u>
+                                <input type="checkbox" name="column[no_up][]" value="1">
+                            </div>
+                        </div>
+                    </div> -->
+                </td>
+            </tr>
+
+            <tr class="set-search" style="display: none;">
+                <th>搜索配置</th>
+                <td class="set-search-checkbox">
+                    
+                </td>
+            </tr>
+
+            <tr class="set-time" style="display: none;">
+                <th>添加时写入时间戳</th>
+                <td>
+                    <select name="column[settime][add]" class="form-control w200 set-time-select">
+                        <option value="">请选择</option>
+                    </select>
+                </td>
+            </tr>
+            <tr class="set-time" style="display: none;">
+                <th>更新时写入时间戳</th>
+                <td>
+                    <select name="column[settime][update]" class="form-control w200 set-time-select2">
+                        <option value="">请选择</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td><button type="submit" class="btn btn-success">Save Change</button></td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<script type="text/javascript">
+var tablesHtml = '';
+var stableData = {};
+$(function(){
+    // 更改列表查询类型时
+    $('.stype-check .radio_box').click(function(event) {
+        var select_type = $('input[name=select_type]:checked').val();
+        // 选择多表关联时
+        if (select_type == 2) {
+            // $('.more-table').fadeTo(500, 1);
+            $('.viewtype-box,.diyview-box').fadeTo(500, 1);
+        } else {
+            // $('.more-table').hide();
+            $('.viewtype-box,.diyview-box').hide();
+        }
+    });
+
+    $('.viewtype-check .radio_box').click(function(event) {
+        var select_type = $('input[name=view_type]:checked').val();
+        if (select_type == 2) {
+            $('.more-table').fadeTo(500, 1);
+            $('.diyview-box').hide();
+        } else {
+            $('.more-table').hide();
+            $('.diyview-box').fadeTo(500, 1);
+        }
+    });
+
+    $('.isauto-check .radio_box').click(function(event) {
+        var select_type = $('input[name=is_auto]:checked').val();
+        // 选择创建操作时
+        if (select_type == 1) {
+            $('.operation-select,.stype-box,.data-table,.set-tpl,.page-box,.api-box').fadeTo(500, 1);
+        } else {
+            $('.operation-select,.stype-box,.data-table,.set-tpl,.page-box,.api-box').hide();
+        }
+    });
+
+    // 绑定全选事件
+    $('.more-table').on('click', '.check-all', function() {
+        var name = $(this).attr('tname');
+        var a = $(this).attr('bz');
+        if (!a) {
+            $(this).attr({'bz':1});
+            $('input[name="'+name+'_field[]"]').attr({'checked':'checked'}).siblings('span').addClass('this');
+        } else {
+            $(this).attr({'bz':0});
+            $('input[name="'+name+'_field[]"]').removeAttr('checked').siblings('span').removeClass('this');
+        }
+    });
+    
+
+    // 绑定单个多选事件
+    $('.more-table,.set-tpl-info,.set-search-checkbox').on('click', '.check_box', function() {
+        var _attr = $(this).find('span').attr('class');
+        if (_attr){
+            // 去除样式 去除选中 
+            $(this).find('span').removeClass('this').siblings('input').attr({'checked':false}).prop({'checked':false});
+        } else {
+            // 增加选中样式 选中对应表单
+            $(this).find('span').addClass('this').siblings('input').prop({'checked':true}).attr({'checked':true});
+        }
+    }); 
+
+    // 绑定管关联字段选择事件
+    $('.more-table').on('change', '.stname', function(){
+        console.log(stableData);
+        var stname = $(this).val();
+        if (stname == 0) return;
+        // 修改数据对象
+        var obj = $(this).next('select');
+        $(obj).html('<option value="0">请选择</option>');
+        $.each(stableData[stname], function(index, val) {
+            var option = '<option value="'+stname+'.'+val+'">'+val+'</option>'
+            $(obj).append(option);
+        });
+    })
+
+    // ----加表----
+    tablesHtml = $('.tables-info').clone();
+    $(tablesHtml).find('.main-table').html('');
+    $(tablesHtml).find('.tables-del').removeClass('hide');
+    
+    $('.tables-add').click(function(){
+        // 加表的字段关联选择
+        $.each(stableData, function(index, val) {
+            var option = '<option value="'+index+'">'+index+'</option>';
+            $(tablesHtml).find('.stname').append(option);
+        });
+        $('.tables-box').append(tablesHtml.clone());
+    })
+
+    // 绑定删表事件
+    $(document).on('click', '.tables-del', function() {
+        $(this).parents('.tables-info').remove();
+    });
+
+    // 绑定选择输入类型事件
+    $(document).on('change', '.column-type-check', function() {
+        var _type = $(this).val();
+        if (_type == 'checkbox' || _type == 'radio' || _type == 'select') {
+            $(this).next('input').attr({'placeholder':'例如 : A选项-1,B选项-2'});
+        }
+    });
+
+    // 绑定选择验证规则事件
+    $(document).on('change', '.column-rule-check', function() {
+        var _type = $(this).val();
+
+        if (_type == 'n' || _type == 's' || _type == 'cn') {
+            $(this).next('input').attr({'placeholder':'例如 : 2-5 表示长度为2~5位'});
+        } 
+        else if (_type == 'preg') {
+            $(this).next('input').attr({'placeholder':'例如 : /^[a-z0-9]{3,6}$/'});
+        } 
+        else if (_type == 'money') {
+            $(this).next('input').attr({'placeholder':'小数位数，例如 2'});
+        } 
+        else {
+            $(this).next('input').attr({'placeholder':'附加规则'});
+            // $(this).next('input').remove();
+        }
+    });
+})
+
+
+function diyhide(){
+    $('.set-tpl-info,.set-search,.set-time').hide();
+}
+
+// 搜索表
+function searchTable(obj){
+    // 表名
+    var tname = $(obj).siblings('.tf-box').find('input').val();
+    if (tname == '') {
+        msg('请输入表名'); return;
+    }
+
+    // 请求数据
+    ajax_get('{:url("get_table")}?tname='+tname, function(res){
+        if (res.status == 1) {
+            stableData[tname] = [];
+            // 创建字段选择器
+            var fieldHtml = '<div tname="'+tname+'" class="check_box check-all">\
+                                <span></span>\
+                                <u>全选</u>\
+                                <input type="checkbox" name="" value="">\
+                            </div>';
+            $.each(res.data, function(index, val) {
+                stableData[tname][index] = val.column_name;
+                fieldHtml += '<div class="clearfix">\
+                                <div class="check_box fl">\
+                                    <span></span>\
+                                    <u>'+val.column_name+'('+val.column_comment+')</u>\
+                                    <input type="checkbox" name="'+tname+'_field[]" value="'+val.column_name+'">\
+                                </div>\
+                                <input type="text" name="'+tname+'_alias['+val.column_name+']" placeholder="alias" class="alias">\
+                            </div>';
+            });
+            // 追加至页面中
+            $(obj).siblings('.tf-box').find('.field').find('div').remove();
+            $(obj).siblings('.tf-box').find('.field').append(fieldHtml).fadeTo(500, 1);
+            $('.stname').append('<option value="'+tname+'">'+tname+'</option>');
+            console.log(stableData);
+        }
+    });
+}
+
+/**
+ * [createTpl 创建模板]
+ */
+function createTpl(){
+    var tname = $('input[name=table]').val();
+    if (tname == '') {
+        msg('请填写数据表'); return;
+    }
+    $('.set-search,.set-time').show();
+
+    // 获取数据列
+    ajax_get('{:url("get_table")}?tname='+tname, function(res){
+        if (res.status == 1) {
+            var _html = '';
+            var _search_checkbox = '';
+            var _timt_select = '<option value="">不写入</option>';
+            $.each(res.data, function(index, val) {
+                // 搜索条件
+                _search_checkbox += '<div class="check_box fl mr10">\
+                                        <span></span>\
+                                        <u>'+val.column_comment+'</u>\
+                                        <input type="checkbox" name="column[search][]" value="'+val.column_name+'">\
+                                    </div>';
+                // 时间戳配置
+                _timt_select += '<option value="'+val.column_name+'">'+val.column_comment+'</option>';
+
+                _html += '<div class="clearfix mb10">\
+                            <input type="text" class="form-control w100 fl mr10" name="column[name]['+val.column_name+']" value="'+val.column_comment+'">\
+                            <select name="column[type]['+val.column_name+']" class="form-control w150 fl mr10 column-type-check">\
+                                <option value="text">text输入框</option>\
+                                <option value="textarea">textarea文本框</option>\
+                                <option value="password">password</option>\
+                                <option value="select">下拉选择</option>\
+                                <option value="checkbox">多选</option>\
+                                <option value="radio">单选</option>\
+                                <option value="time">时间选择</option>\
+                                <option value="time_more">范围时间选择</option>\
+                                <option value="img">单图上传</option>\
+                                <option value="img_more">多图上传</option>\
+                                <option value="editor">编辑器</option>\
+                            </select>\
+                            <input type="text" name="column[val]['+val.column_name+']" class="form-control w150 fl mr10" placeholder="设置值">\
+                            <select name="column[rule]['+val.column_name+']" class="form-control w100 fl mr10 column-rule-check">\
+                                <option value="norule">不验证</option>\
+                                <option value="*">必须</option>\
+                                <option value="n">数字</option>\
+                                <option value="s">字符串</option>\
+                                <option value="p">邮编</option>\
+                                <option value="m">手机号</option>\
+                                <option value="e">邮箱</option>\
+                                <option value="url">网址</option>\
+                                <option value="preg">自定义</option>\
+                                <option value="money">金额</option>\
+                                <option value="cn">中文</option>\
+                            </select>\
+                            <input type="text" name="column[add_rule]['+val.column_name+']" class="form-control w200 fl mr10" placeholder="附加规则">\
+                            <div class="fl clearfix">\
+                                <div class="check_box fl mr10">\
+                                    <span></span>\
+                                    <u>更新时不验证</u>\
+                                    <input type="checkbox" name="column[no_up_rule][]" value="'+val.column_name+'">\
+                                </div>\
+                                <div class="check_box fl mr10">\
+                                    <span></span>\
+                                    <u>不需要添加</u>\
+                                    <input type="checkbox" name="column[no_add][]" value="'+val.column_name+'">\
+                                </div>\
+                                <div class="check_box fl mr10">\
+                                    <span></span>\
+                                    <u>不需要更新</u>\
+                                    <input type="checkbox" name="column[no_up][]" value="'+val.column_name+'">\
+                                </div>\
+                                <div class="check_box fl mr10">\
+                                    <span></span>\
+                                    <u>列表不显示</u>\
+                                    <input type="checkbox" name="column[no_show][]" value="'+val.column_name+'">\
+                                </div>\
+                            </div>\
+                        </div>';
+            });
+            $('.set-tpl-info .tpl-column-set').html('');
+            $('.set-tpl-info .tpl-column-set').append(_html);
+            $('.set-search-checkbox').html(_search_checkbox);
+            $('.set-time-select').html(_timt_select);
+            $('.set-time-select2').html(_timt_select);
+        }
+    });
+
+    $('.set-tpl-info').fadeTo(500, 1);
+}
+
+
+</script>
+{include file="common/footer"}

@@ -1,0 +1,49 @@
+.headline {
+    font-size: larger;
+}
+
+.middle {
+    color: #cccccc;
+    font-size: 15px;
+    margin: 10px 0;
+}
+
+.time {
+    float: left;
+}
+
+.browser {
+    float: right;
+}
+
+.intro {
+    font-size: 15px;
+    color: #878787;
+}
+
+.content {
+    margin-top: 10px;
+    font-size: 17px;
+    color: #7a7a7a
+}
+
+.ad {
+    margin-top: 20px;
+}
+
+.recommend .head {
+    color: #4b4b4b;
+    margin-top: 12px;
+    font-size: 18px;
+}
+
+.title {
+    font-size: 15px;
+    color: #595959;
+    margin: 15px 0;
+}
+
+img {
+    display: block;
+    width: 100%;
+}

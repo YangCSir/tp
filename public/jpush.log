@@ -1,0 +1,4 @@
+Send POST https://api.jpush.cn/v3/push, body:{"platform":"all","audience":"all","notification":{"alert":"1580****004\u5bf9\u60a8\u7684\u9879\u76ee\u611f\u5174\u8da3"},"options":{"sendno":65059,"apns_production":false}}, times:1
+Send POST https://api.jpush.cn/v3/push, body:{"platform":"all","audience":"all","notification":{"alert":"1580****004\u5bf9\u60a8\u7684\u9879\u76ee\u611f\u5174\u8da3"},"options":{"sendno":54158,"apns_production":false}}, times:1
+Send POST https://api.jpush.cn/v3/push, body:{"platform":"all","audience":"all","notification":{"alert":"1580****004\u5bf9\u60a8\u7684\u9879\u76ee\u611f\u5174\u8da3"},"options":{"sendno":35157,"apns_production":false}}, times:1
+Send POST https://api.jpush.cn/v3/push, body:{"platform":"all","audience":{"alias":["d41d8cd98f00b204e9800998ecf8427e"]},"notification":{"alert":"\u5411\u60a8\u6295\u9012\u4e86\u9879\u76ee"},"options":{"sendno":96238,"apns_production":false}}, times:1

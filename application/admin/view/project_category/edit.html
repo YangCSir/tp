@@ -1,0 +1,47 @@
+{include file="common/header"}
+<div id="right_content">
+    <form action="" class="verify-form rform">
+        <table class="table">
+            <tr>
+                <td width="150"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th width="150" class="msg">名称</th>
+                <td><input name="name" value="{$data.name}" type="text" class="form-control w400" datatype="*"></td>
+            </tr>
+            <tr>
+                <th class="msg">所属分类</th>
+                <td>
+                    <select name="pid" class="form-control w426" datatype="n" {if $data.pid == 0} disabled {/if}>
+                    {if $data.pid == 0}
+                        <option value="0">顶级分类</option>
+                    {else}
+                        {foreach $cat AS $n => $m}
+                            <option value="{$m.pcid}" {if $data['pid'] == $m.pcid} selected="selected"{/if}>{$m.name}</option>
+                        {/foreach}
+                    {/if}
+                    </select>
+                </td>
+            </tr>
+            {if $data.pid == 0}
+            <tr>
+                <th width="150" class="msg"></th>
+                <td class="cl-red">顶级分类能修改所属分类</td>
+            </tr>
+            {/if}
+
+            <tr>
+                <td>
+                    <input name="pcid" type="hidden" value="{$data.pcid}">
+                </td>
+                <td><button type="submit" class="btn btn-success">Save Change</button></td>
+            </tr>
+        </table>        
+    </form>
+</div>
+   
+<script>
+          
+</script>
+{include file="common/footer"}

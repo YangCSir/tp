@@ -1,0 +1,165 @@
+{include file="common/header"}
+<div id="right_content">
+    <form action="" class="verify-form rform">
+        <table class="table">
+            <tr>
+                <th width="150" class="msg">text输入框</th>
+                <td><input type="text" name="phone" value="" class="form-control w400"></td>
+            </tr>
+            <tr>
+                <th class="msg">textarea文本框</th>
+                <td><textarea></textarea></td>
+            </tr>
+            <tr>
+                <th class="msg">select下拉框</th>
+                <td>
+                    <select name="" class="form-control w426">
+                        <option value="1">选项一</option>
+                        <option value="2">选项一</option>
+                        <option value="3">选项一</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <th class="msg">checkbox多选</th>
+                <td>
+                    <div class="check_box fl mr10 pr">
+                        <span></span>
+                        <u>选项1</u>
+                        <input type="checkbox" name="id[]" value="1">
+                        <u class="Validform_checktip"></u>
+                    </div>
+                    <div class="check_box fl mr10">
+                        <span></span>
+                        <u>选项2</u>
+                        <input type="checkbox" name="id[]" value="2">
+                    </div>
+                    <div class="check_box fl mr10">
+                        <span></span>
+                        <u>选项3</u>
+                        <input type="checkbox" name="id[]" value="3">
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <th class="msg">radio单选</th>
+                <td>
+                    <div class="radio_box fl mr10 pr">
+                        <span></span>
+                        <u>选项1</u>
+                        <input type="radio" name="sex" value="1">
+                        <u class="Validform_checktip"></u>
+                    </div>
+                    <div class="radio_box fl mr10">
+                        <span></span>
+                        <u>选项2</u>
+                        <input type="radio" name="sex" value="2">
+                    </div>
+                    <div class="radio_box fl mr10">
+                        <span></span>
+                        <u>选项3</u>
+                        <input type="radio" name="sex" value="3">
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <th>时间选择器</th>
+                <td>
+                    <div class="dateplugin" stype="selector">
+                        <input type="text" class="form-control w200 date-input" placeholder="选择日期">
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <th>时间选择器</th>
+                <td>
+                    <div class="dateplugin" stype="range" >
+                        <input type="text" class="form-control w200 date-more" placeholder="选择日期">
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <th>单图上传</th>
+                <td>
+                    <div id="filePicker">选择图片</div>
+                    <div id="fileList" class="uploader-list">
+                        <input type="hidden" name="img" value="" nullmsg="请上传图片">
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <th>多图上传</th>
+                <td>
+                    <div id="filePicker2">选择图片</div>
+                    <div id="fileList2" class="uploader-list">
+                        <input class="upimg-ts" type="hidden" name="img" value="" datatype="*" nullmsg="请上传图片">
+                    </div>
+                </td>
+            </tr>
+            
+            <tr>
+                <th>城市选择</th>
+                <td style="position: relative;" class="city-topbox">
+                    <div id="mycity"><input type="" name="" class="form-control w300" nullmsg="请选择城市"></div>
+                    <input id="myids" type="hidden" name="">
+                </td>
+            </tr>
+
+            <tr>
+                <th class="msg">编辑器</th>
+                <td>
+                    <!-- <script id="editor" type="text/plain" style="width:600px;height:100px;"></script> -->
+                    <textarea style="width:400px;" name="content" id="editor"></textarea>
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td><button type="submit" class="btn btn-success">Save Change</button></td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+{include file="common/webuploader"}
+{include file="common/ueditor"}
+{include file="common/dateplugin"}
+
+<script type="text/javascript">
+    var cityName = '#mycity', cityIds = '#myids', cityLevel = 3;
+</script>
+{include file="common/city"}
+
+<script type="text/javascript">
+    $(function(){
+        file_upload({
+            pick        : '#filePicker',
+            container   : '#fileList',
+            server      : '{:url("upload/upload")}',
+            mulit       : false,
+            inputname   : 'img',
+        });
+
+        file_upload({
+            pick        : '#filePicker2',
+            container   : '#fileList2',
+            server      : '{:url("upload/upload")}',
+            mulit       : true,
+            inputname   : 'uimg[]',
+            formData : {
+                cj : '800,400,200' // 等比例裁剪宽 800,400,200 的图片 
+            } 
+        });
+
+        var ue = UE.getEditor('editor', {
+            autoHeight: false,
+        });
+    })
+</script>
+{include file="common/footer"}

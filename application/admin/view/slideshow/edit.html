@@ -1,0 +1,51 @@
+{include file="common/header"}
+<div id="right_content">
+    <form action="" class="verify-form rform">
+        <table class="table">
+            <tr>
+                <td width="150"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th class='msg'>图片</th>
+                <td>
+                    <div id="img-picker">上传图片</div>
+                    <div id="img-list" class="uploader-list">
+                        <input type="hidden" name="img" value="{$data.img}" datatype="*" nullmsg="请上传图片">
+                        <div class="upimg-box">
+                            {if (!empty($data.img))}
+                                <span class="glyphicon glyphicon-remove-sign remove-img"></span>
+                                <input type="hidden" name="img" value="{$data.img}">
+                                <img src="{$data.img}" style="max-width:200px;">
+                            {/if}
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th width="150" class="msg">跳转地址</th>
+                <td><input name="url" value="{$data.url}" type="text" class="form-control w400" datatype="url"></td>
+            </tr>
+  
+            <tr>
+                <td>
+                    <input name="id" type="hidden" value="{$data.id}">
+                </td>
+                <td><button type="submit" class="btn btn-success">Save Change</button></td>
+            </tr>
+        </table>        
+    </form>
+</div>
+{include file="common/webuploader"}
+   
+<script>
+file_upload({
+    pick        : '#img-picker',
+    container   : '#img-list',
+    server      : '{:url("upload/upload")}',
+    mulit       : false,
+    inputname   : 'img'
+});
+          
+</script>
+{include file="common/footer"}

@@ -1,0 +1,160 @@
+{include file="common/header"}
+<div id="right_content">
+    <div class="top-info">
+        <i class="glyphicon glyphicon-home"></i>
+        统计图表
+    </div>
+
+    <div id="chart_box" class="clearfix">
+        <div class="box">
+            <h2>饼图</h2>
+            <canvas id="myChart1" height="300"></canvas>
+        </div>
+
+        <div class="box">
+            <h2>柱状图</h2>
+            <canvas id="myChart2" height="300"></canvas>
+        </div>
+
+        <div class="box">
+            <h2>极地区域图</h2>
+            <canvas id="myChart3" height="300"></canvas>
+        </div>
+
+        <div class="box" style="margin-right: 0;">
+            <h2>雷达图或蛛网图</h2>
+            <canvas id="myChart4" height="300"></canvas>
+        </div>
+
+        <div class="box" style="width: 100%;">
+            <h2>曲线图</h2>
+            <canvas id="myChart5" height="260"></canvas>
+        </div>
+    </div>
+</div>
+
+<script src="/static/common/Chart.min.js"></script>
+<script>
+    $(function(){
+        $.each($('canvas'), function(index, val) {
+            var _w = $(this).parent('div').width();
+            $(this).attr({'width':_w - 20});
+        });
+
+        // -------------- 饼图 --------------
+        var data1 = [
+            {
+                value: 30,
+                color:"#F38630"
+            },
+            {
+                value : 50,
+                color : "#E0E4CC"
+            },
+            {
+                value : 100,
+                color : "#69D2E7"
+            }
+        ]
+        var ctx = $("#myChart1").get(0).getContext("2d");
+        new Chart(ctx).Pie(data1);
+
+        // -------------- 柱状图 --------------
+        var data2 = {
+            labels : ["January","February","March"],
+            datasets : [
+                {
+                    fillColor : "rgba(220,220,220,0.5)",
+                    strokeColor : "rgba(220,220,220,1)",
+                    data : [65,59,90]
+                },
+                {
+                    fillColor : "rgba(151,187,205,0.5)",
+                    strokeColor : "rgba(151,187,205,1)",
+                    data : [28,48,40]
+                }
+            ]
+        }
+        var ctx = $("#myChart2").get(0).getContext("2d");
+        new Chart(ctx).Bar(data2);
+
+        // -------------- 极地区域图 --------------
+        var data3 = [
+            {
+                value : 30,
+                color: "#D97041"
+            },
+            {
+                value : 90,
+                color: "#C7604C"
+            },
+            {
+                value : 24,
+                color: "#21323D"
+            },
+            {
+                value : 58,
+                color: "#9D9B7F"
+            },
+            {
+                value : 82,
+                color: "#7D4F6D"
+            },
+            {
+                value : 8,
+                color: "#584A5E"
+            }
+        ]
+        var ctx = $("#myChart3").get(0).getContext("2d");
+        new Chart(ctx).PolarArea(data3);
+
+        // -------------- 雷达图或蛛网图 --------------
+        var data4 = {
+            labels : ["Eating","Drinking","Sleeping","Designing","Coding","Partying"],
+            datasets : [
+                {
+                    fillColor : "rgba(220,220,220,0.5)",
+                    strokeColor : "rgba(220,220,220,1)",
+                    pointColor : "rgba(220,220,220,1)",
+                    pointStrokeColor : "#fff",
+                    data : [65,59,90,81,56,55]
+                },
+                {
+                    fillColor : "rgba(151,187,205,0.5)",
+                    strokeColor : "rgba(151,187,205,1)",
+                    pointColor : "rgba(151,187,205,1)",
+                    pointStrokeColor : "#fff",
+                    data : [28,48,40,19,96,27]
+                }
+            ]
+        }
+        var ctx = $("#myChart4").get(0).getContext("2d");
+        new Chart(ctx).Radar(data4);
+
+        // -------------- 曲线图 --------------
+        var data5 = {
+            labels : ["January","February","March","April","May","June","July"],
+            datasets : [
+                {
+                    fillColor : "rgba(220,220,220,0.5)",
+                    strokeColor : "rgba(220,220,220,1)",
+                    pointColor : "rgba(220,220,220,1)",
+                    pointStrokeColor : "#fff",
+                    data : [65,59,90,81,56,55,40]
+                },
+                {
+                    fillColor : "rgba(151,187,205,0.5)",
+                    strokeColor : "rgba(151,187,205,1)",
+                    pointColor : "rgba(151,187,205,1)",
+                    pointStrokeColor : "#fff",
+                    data : [28,48,40,19,96,27,100]
+                }
+            ]
+        }
+        var _w = $(window).width() - 100;
+        $('#myChart5').attr({'width':_w});
+        var ctx = $("#myChart5").get(0).getContext("2d");
+        new Chart(ctx).Line(data5);
+    })
+</script>
+{include file="common/footer"}

@@ -1,0 +1,121 @@
+{include file="common/header"}
+<div id="right_content">
+    <div class="top-info">
+        <i class="glyphicon glyphicon-home"></i>
+        项目列表
+    </div>
+    
+    <!-- 菜单 -->
+    <ul class="clearfix menu">
+        {foreach $menu AS $k => $v}
+        <li><a href="{:url('',['status'=>$k])}" {if $k == $status} class="this" {/if}>{$v}</a></li>
+        {/foreach}
+
+    </ul>
+
+    <div class="table-box">
+        <div class="table-header clearfix">
+            <form action="" method="get" class="clearfix fr">
+                <input type="text" value="{$keywords}" name="keywords" class="form-control search-in" placeholder="项目名称">
+                <button onclick="loding();" type="submit" class="btn btn-info btn-sm fl">
+                    <i class="glyphicon glyphicon-search"></i>
+                </button>
+            </form>
+        </div>
+
+        <table class="table">
+            <tr>
+                <th width="20">
+                    <div class="check_box">
+                        <span onclick="check_all('pid[]');"></span>
+                        <input type="checkbox" name="check_all" value="">
+                    </div>
+                </th>
+                <th>项目名称</th>
+                <th>发布者</th>
+                <th>项目分类</th>
+                <th>添加时间</th>
+                <th>禁用状态</th>
+                <th>审核状态</th>
+                {if $status == 4}
+                <th>拒绝理由</th>
+                {/if}
+
+                <th width="100">操作</th>
+            </tr>
+            {if (!empty($data))}
+            {foreach $data AS $v}
+                <tr>
+                    <td>
+                        <div class="check_box fl mr10">
+                            <span></span>
+                            <input type="checkbox" name="pid[]" value="{$v.pid}">
+                        </div>
+                    </td>
+
+                    <td>{$v.name}</td>
+                    <td>
+                        账号：{$v.phone} <br>
+                        昵称：{$v.niname}
+                    </td>
+                    <td>
+                        <?php $tmp = explode(',', $v['pcid']);?>
+                        {foreach $tmp AS $val}
+                        {$cat[$val]}&nbsp;
+                        {/foreach}
+                    </td>
+                    <td>{$v.add_time ? date('Y-m-d H:i:s', $v.add_time) : '----'}</td>
+                    <td>
+                        {if $v.pass == 1}
+                        <span class="label label-success">启用</span>
+                        {else}
+                        <span class="label label-danger">禁用</span>
+                        {/if}
+                    </td>
+                    <td>
+                        {if $v.status == 2}
+                        <span class="label label-warning">待审核</span>
+                        {elseif $v.status == 3}
+                        <span class="label label-success">已通过</span>
+                        {elseif $v.status == 4}
+                        <span class="label label-danger">已拒绝</span>
+                        {/if}
+                    </td>
+                    {if $status == 4}
+                    <td>{$v.err}</td>
+                    {/if}
+
+                    <td class="operation">
+                        {if $v.pass == 1}
+                        <a class="glyphicon glyphicon-remove cl-red"
+                           onclick="ajax_post('{:url('pass')}',{'pid':{$v['pid']},'pass':'0'});" title="禁用"></a>
+                        {else}
+                        <a class="glyphicon glyphicon-ok cl-gre"
+                           onclick="ajax_post('{:url('pass')}',{'pid':{$v['pid']},'pass':'1'});" title="启用"></a>
+                        {/if}
+
+                        {if $v.status == 2}
+                            <a class="glyphicon glyphicon-off cl-gre"
+                               onclick="ajax_post('{:url('status')}',{'pid':{$v['pid']},'status':'3'});" title="通过"></a>
+
+                            <a href="{:url('status',['status'=>4,'pid'=>$v['pid']])}" target="frame_dispose"
+                               onclick="open_frame('拒绝理由', 600, 340)"
+                               class="glyphicon glyphicon-ban-circle cl-red" title="拒绝"></a>
+                        {/if}
+
+                        <a href="{:url('detail',['pid'=>$v['pid']])}" target="frame_dispose"
+                           onclick="open_frame('查看详情', 100, 100, true)"
+                           class="glyphicon glyphicon-folder-open" title="查看详情"></a>
+                    </td>
+                </tr>
+            {/foreach}
+            {/if}
+        </table>
+        <div>{$page}</div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+</script>
+{include file="common/footer"}

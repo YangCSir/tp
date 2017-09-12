@@ -1,0 +1,69 @@
+<link rel="stylesheet" href="/static/common/address/address.css?a=3" />
+<script type="text/javascript" src="/static/common/address/jquery.address.min.js?a=1"></script>
+<script type="text/javascript">
+$(function(){
+    $(document).click(function(){
+        $('#city-select').hide();
+    })
+
+    $(cityName + ',#city-select').click(function(event){
+        if (cityLevel == 2) {
+            $('#tab_district').hide();
+        }
+        event.stopPropagation();
+    });
+
+    
+    $('#city-province a').click(function(event){
+        // event.stopPropagation();
+        var city = $(cityName + ' input').val();
+        var city = city.split(',');
+
+        var ids  = $(cityIds).val();
+        var ids  = ids.split(',');
+
+        console.log(city);
+        console.log(city[0] + ',' + city[1]);
+
+        $(cityName + ' input').val(city[0]);
+        $(cityIds).val(ids[0]);
+        $(cityName + ' input').blur();
+
+        $('#city-city a').click(function(event){
+            event.stopPropagation();
+            var city = $(cityName + ' input').val();
+            var city = city.split(',');
+
+            var ids  = $(cityIds).val();
+            var ids  = ids.split(',');
+
+            console.log(city);
+            console.log(city[0] + ',' + city[1]);
+
+            $(cityName + ' input').val(city[0] + ',' + city[1]);
+            $(cityIds).val(ids[0] + ',' + ids[1]);
+
+            if (cityLevel == 2) {
+                $('#city-select').hide();
+                $('#tab_city').click();
+            }
+        })
+    })
+})
+
+$(cityName).Address({
+    callback:function(infos,selected_ids) {
+        var str = '';
+        var ids = '';
+        var dh  = '';
+        for(var i=0;i<infos.length;i++) {
+            str += dh + infos[i];
+            ids += dh + selected_ids[i];
+            dh = ',';
+        }
+        db = '';
+        $(cityName + ' input').val(str);
+        $(cityIds).val(ids);
+    }
+});
+</script>

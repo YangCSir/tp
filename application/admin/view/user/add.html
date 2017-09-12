@@ -1,0 +1,59 @@
+{include file="common/header"}
+<div id="right_content">
+    <form action="" class="verify-form rform">
+        <table class="table">
+            <input type="password" style="position:absolute; z-index: -1;">
+            <tr>
+                <td width="150"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th width="150" class="msg">账号</th>
+                <td><input name="phone" type="text" class="form-control w400" datatype="/^1\d{10}$/"></td>
+            </tr>
+            <tr>
+                <th width="150" class="msg">密码</th>
+                <td><input name="password" type="password" class="form-control w400" datatype="s6-13"></td>
+            </tr>
+            <tr>
+                <th width="150" class="msg">昵称</th>
+                <td><input name="niname" type="text" class="form-control w400" datatype="*"></td>
+            </tr>
+            <tr>
+                <th class="msg">状态</th>
+                <td>
+                    <?php $cnum = 0;?>
+                    {foreach $checkVal['statusVal'] AS $n => $m}
+                    {if ($cnum == 0)}
+                        <div class="radio_box fl mr10 pr">
+                            <span></span>
+                            <u>{$m}</u>
+                            <input type="radio" name="status" value="{$n}" datatype="*">
+                            <u class="Validform_checktip"></u>
+                        </div>
+                   {else/}
+                        <div class="radio_box fl mr10 pr">
+                            <span></span>
+                            <u>{$m}</u>
+                            <input type="radio" name="status" value="{$n}">
+                        </div>
+                    {/if}
+                    <?php $cnum = 1;?>
+                    {/foreach}
+                </td>
+            </tr>
+  
+            <tr>
+                <td></td>
+                <td><button type="submit" class="btn btn-success">Save Change</button></td>
+            </tr>
+        </table>        
+    </form>
+</div>
+   
+<script>
+$(function(){
+     
+})
+</script>
+{include file="common/footer"}

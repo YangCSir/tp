@@ -1,0 +1,80 @@
+{include file="common/header"}
+<div id="right_content" style="width: 1300px;">
+    <form action="" class="verify-form rform">
+        <table class="table">
+            <tr>
+                <th width="120" class="msg">所属分类</th>
+                <td width="500">
+                    <select name="mcid" class="form-control w326">
+                        {foreach $category AS $v}
+                            <option value="{$v.id}" {if ($data['mcid'] == $v['id'])} selected="selected"{/if}>{$v.name}</option>
+                        {/foreach}
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th class="msg">菜单名称</th>
+                <td><input type="text" name="name" value="{$data.name}" class="form-control w300" datatype="*" ></td>
+            </tr>
+            <tr>
+                <th class="msg">菜单显示</th>
+                <td class="isauto-check">
+                    <div class="radio_box fl mr10 pr">
+                        <span {if ($data['is_show'] == 1)} class="this"{/if}></span>
+                        <u>显示</u>
+                        <input type="radio" name="is_show" value="1" {if ($data['is_show'] == 1)} checked="checked"{/if} >
+                    </div>
+                    <div class="radio_box fl mr10">
+                        <span {if ($data['is_show'] == 0)} class="this"{/if}></span>
+                        <u>不显示</u>
+                        <input type="radio" name="is_show" value="0" {if ($data['is_show'] == 0)} checked="checked"{/if}>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <th>方法</th>
+                <td class="method-box">
+                    {if (!empty($data['method']))}
+                    {foreach $data['method'] AS $v}
+                        <div class="clearfix mbox mt10">
+                            <input type="text" name="mname[]" value="{$v['name']}" class="form-control w150 fl mr10">
+                            <input type="text" name="method[]" value="{$v['method']}" class="form-control w150 fl mr10">
+                            <button type="button" class="btn btn-danger del-box">删除方法</button>
+                        </div>
+                    {/foreach}
+                    {else/}
+                        <div class="clearfix mbox mt10">
+                            <input type="text" name="mname[]" class="form-control w150 fl mr10">
+                            <input type="text" name="method[]" class="form-control w150 fl mr10">
+                            <button type="button" class="btn btn-danger del-box">删除方法</button>
+                        </div>
+                    {/if}
+                </td>
+                <td>
+                    <button type="button" class="btn btn-info mt10" onclick="add_mbox();">添加方法</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td><input type="hidden" name="id" value="{$data['id']}"></td>
+                <td><button type="submit" class="btn btn-success">Save Change</button></td>
+            </tr>
+        </table>
+    </form>
+</div>
+<script>
+
+/**
+ * [add_mbox 添加方法]
+ */
+function add_mbox(){
+    var box = $('.mbox:eq(0)').clone();
+    box.css({'margin-top':'10px'}).find('input').val('');
+    $('.method-box').append(box);
+}
+$('.method-box').on('click', '.del-box', function(){
+    $(this).parent('.mbox').remove();
+})
+</script>
+{include file="common/footer"}

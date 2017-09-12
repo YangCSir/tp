@@ -1,0 +1,63 @@
+{include file="common/header"}
+<div id="right_content">
+    <form action="" class="verify-form rform">
+        <table class="table">
+            <input type="password" style="position:absolute; z-index: -1;">
+            <tr>
+                <td width="150"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th width="150" class="msg">账号</th>
+                <td><input name="phone" value="{$data.phone}" type="text" class="form-control w400" datatype="/^1\d{10}$/"></td>
+            </tr>
+            <tr>
+                <th width="150" class="msg">密码</th>
+                <td><input name="password" value="" type="password" class="form-control w400" ignore="ignore" datatype="s6-13"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="cl-red">不需要修改密码时可留空</td>
+            </tr>
+            <tr>
+                <th width="150" class="msg">昵称</th>
+                <td><input name="niname" value="{$data.niname}" type="text" class="form-control w400" datatype="*"></td>
+            </tr>
+            <tr>
+                <th class="msg">状态</th>
+                <td>
+                    <?php $cnum = 0;?>
+                    {foreach $checkVal['statusVal'] AS $n => $m}
+                    {if ($cnum == 0)}
+                        <div class="radio_box fl mr10 pr">
+                            <span {if ($data['status'] == $n)}' class="this"{/if}></span>
+                            <u>{$m}</u>
+                            <input type="radio" name="status" value="{$n}" datatype="*" {if ($data['status'] == $n)} checked="checked"{/if}>
+                            <u class="Validform_checktip"></u>
+                        </div>
+                   {else/}
+                        <div class="radio_box fl mr10 pr">
+                            <span {if ($data['status'] == $n)} class="this"{/if}></span>
+                            <u>{$m}</u>
+                            <input type="radio" name="status" value="{$n}" {if ($data['status'] == $n)} checked="checked"{/if}>
+                        </div>
+                    {/if}
+                    <?php $cnum = 1;?>
+                    {/foreach}
+                </td>
+            </tr>
+  
+            <tr>
+                <td>
+                    <input name="uid" type="hidden" value="{$data.uid}">
+                </td>
+                <td><button type="submit" class="btn btn-success">Save Change</button></td>
+            </tr>
+        </table>        
+    </form>
+</div>
+   
+<script>
+          
+</script>
+{include file="common/footer"}

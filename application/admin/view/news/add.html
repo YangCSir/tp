@@ -1,0 +1,51 @@
+{include file="common/header"}
+<div id="right_content">
+    <form action="" class="verify-form rform">
+        <table class="table">
+            <tr>
+                <td width="150"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th width="150" class="msg">标题</th>
+                <td><input name="title" type="text" class="form-control w400" datatype="*"></td>
+            </tr>
+            <tr>
+                <th class="msg">简介</th>
+                <td><textarea name="intro" datatype="*"></textarea></td>
+            </tr>
+            <tr>
+                <th class='msg'>详情</th>
+                <td>
+                    <textarea name="detail" style="width:800px;height:400px;" datatype="*" id="detailEditor"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <th width="150" class="msg">作者</th>
+                <td><input name="author" type="text" value="{$Think.Session.adminUser.username}" class="form-control w400" datatype="*"></td>
+            </tr>
+            <tr>
+                <th width="150" class="msg">排序</th>
+                <td><input name="sort" type="text" class="form-control w400" datatype="n"></td>
+            </tr>
+  
+            <tr>
+                <td></td>
+                <td><button type="submit" class="btn btn-success">Save Change</button></td>
+            </tr>
+        </table>        
+    </form>
+</div>
+{include file="common/ueditor"}
+   
+<script>
+$(function(){
+    setTimeout(function(){
+        UE.getEditor('detailEditor', {
+            autoHeight: false,
+        });
+    },500);
+ 
+})
+</script>
+{include file="common/footer"}
